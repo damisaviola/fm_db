@@ -26,8 +26,8 @@
             <div class="row s-footer__bottom">
                 <div class="column lg-5 md-6 stack-on-900">
                     <div class="footer__logo">
-                        <a href="index.html">
-                            <img src="images/logo.svg" alt="Homepage">
+                        <a href="#">
+                            <img src="<?php echo base_url('assets/home/images/logo.svg'); ?>" alt="Homepage">
                         </a>
                     </div>
     
@@ -71,7 +71,7 @@
     
                     <p class="s-footer__contact">
                         Do you have a question? Send us a word: <br>
-                        <a href="mailto:#0" class="s-footer__mail-link">support@yoursite.com</a>
+                        <a href="mailto:#0" class="s-footer__mail-link">futsalmate@gmail.com</a>
                     </p>
     
                     <div class="ss-copyright">

@@ -40,8 +40,8 @@
         </nav>
 
         <div class="s-header__cta">
-            <a href="#download" class="btn btn--stroke s-header__cta-btn smoothscroll">Get The App</a>
-            <a href="#download" class="btn btn--stroke s-header__cta-btn smoothscroll" style="margin-left: 10px;">Get The App</a> <!-- Tombol tambahan -->
+            <a href="#download" class="btn btn--stroke s-header__cta-btn smoothscroll">Login</a>
+            <a href="#download" class="btn btn--stroke s-header__cta-btn smoothscroll" style="margin-left: 10px;">Sign Up</a> <!-- Tombol tambahan -->
         </div>
 
     </div> <!-- end s-header__inner -->
@@ -456,7 +456,7 @@
                 
                                 <div class="s-testimonials__slide swiper-slide">
                                     <div class="s-testimonials__author">
-                                        <img src="images/avatars/user-01.jpg" alt="Author image" class="s-testimonials__avatar">
+                                        <img src="<?php echo base_url('assets/home/images/avatars/user-01.jpg'); ?>" alt="Author image" class="s-testimonials__avatar">
                                         <cite class="s-testimonials__cite">
                                             <strong>Satya Nadella</strong>
                                             <span>CEO, Microsoft</span>
@@ -518,8 +518,8 @@
 
                                     <div class="item-plan__top-part">
                                         <h3 class="item-plan__title">Pro Plan</h3>
-                                        <p class="item-plan__price"><sup>Rp</sup>100K</p>
-                                        <p class="item-plan__per">Per Bulan</p>
+                                        <p class="item-plan__price"><sup>Rp</sup>100<sup class="item-plan__per">K</p>
+                                        <p class="item-plan__per">Per Month</p>
                                     </div>
                 
                                     <div class="item-plan__bottom-part">
@@ -580,10 +580,10 @@
                 <div class="row s-download__badges-block">
                     <div class="column lg-12 s-download__badges">
                         <a href="#0" title="" class="badge-appstore">
-                            <img src="images/appstore.png" alt="">
+                            <img src="<?php echo base_url('assets/home/images/appstore.png'); ?>" alt="">
                         </a>
                         <a href="#0" title="" class="badge-googleplay">
-                            <img src="images/google-play.png" alt="">
+                        <img src="<?php echo base_url('assets/home/images/google-play.png'); ?>" alt="">
                         </a>
                     </div>
                 </div>
