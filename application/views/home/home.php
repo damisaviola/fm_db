@@ -288,17 +288,15 @@
                             </div> <!-- end how-to process -->
 
                         </div>
-
                         <div class="column s-about__howto-screens-block">
-
                             <div class="s-about__howto-screens">
-                                <img src="images/screens/screen-01.png"
-                                     srcset="images/screens/screen-01.png 1x, images/screens/screen-01@2x.png 2x" alt="">
-                                <img src="images/screens/screen-04.png"
-                                     srcset="images/screens/screen-04.png 1x, images/screens/screen-04@2x.png 2x" alt="">
+                                <img src="<?php echo base_url('assets/home/images/screens/screen-01.png'); ?>"
+                                    srcset="<?php echo base_url('assets/home/images/screens/screen-01.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-01@2x.png'); ?> 2x" alt="">
+                                <img src="<?php echo base_url('assets/home/images/screens/screen-04.png'); ?>"
+                                    srcset="<?php echo base_url('assets/home/images/screens/screen-04.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-04@2x.png'); ?> 2x" alt="">
                             </div>
-
                         </div>
+
 
                     </div>
         
@@ -542,7 +540,7 @@
 
                                     <div class="item-plan__top-part">
                                         <h3 class="item-plan__title">Free</h3>
-                                        <p class="item-plan__price"><sup>$</sup>0</p>
+                                        <p class="item-plan__price"><sup>Rp</sup>0</p>
                                         <p class="item-plan__per">Forever</p>
                                     </div>
                 
