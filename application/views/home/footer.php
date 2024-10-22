@@ -1,14 +1,16 @@
  <!-- # site-footer
+
+
         ================================================== -->
         <footer id="colophon" class="s-footer footer">
 
             <div class="row s-footer__top">
                 <div class="column lg-12 text-center">
                     <h2 class="text-display-1">
-                        Sign Up to Our Newsletter.
+                    Start using FutsalMate for free
                     </h2>
                     <p class="lead">
-                        Subscribe for updates, special offers and more.
+                    Akses semua fitur sistem pengelolaan lapangan futsal selama 30 hari, kemudian tentukan rencana mana yang paling cocok untuk kebutuhan bisnis Anda.
                     </p>
                 </div>
                 <div class="column lg-12 s-footer__subscribe">
@@ -57,6 +59,12 @@
                                 <span class="u-screen-reader-text">Instagram</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path id="path4" inkscape:connector-curvature="0" d="M16.6,14c-0.2-0.1-1.5-0.7-1.7-0.8c-0.2-0.1-0.4-0.1-0.6,0.1c-0.2,0.2-0.6,0.8-0.8,1c-0.1,0.2-0.3,0.2-0.5,0.1c-0.7-0.3-1.4-0.7-2-1.2c-0.5-0.5-1-1.1-1.4-1.7c-0.1-0.2,0-0.4,0.1-0.5c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.2-0.3,0.2-0.4c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.6-1.3-0.8-1.8C9.4,7.3,9.2,7.3,9,7.3c-0.1,0-0.3,0-0.5,0C8.3,7.3,8,7.5,7.9,7.6C7.3,8.2,7,8.9,7,9.7c0.1,0.9,0.4,1.8,1,2.6c1.1,1.6,2.5,2.9,4.2,3.7c0.5,0.2,0.9,0.4,1.4,0.5c0.5,0.2,1,0.2,1.6,0.1c0.7-0.1,1.3-0.6,1.7-1.2c0.2-0.4,0.2-0.8,0.1-1.2C17,14.2,16.8,14.1,16.6,14 M19.1,4.9C15.2,1,8.9,1,5,4.9c-3.2,3.2-3.8,8.1-1.6,12L2,22l5.3-1.4c1.5,0.8,3.1,1.2,4.7,1.2h0c5.5,0,9.9-4.4,9.9-9.9C22,9.3,20.9,6.8,19.1,4.9 M16.4,18.9c-1.3,0.8-2.8,1.3-4.4,1.3h0c-1.5,0-2.9-0.4-4.2-1.1l-0.3-0.2l-3.1,0.8l0.8-3l-0.2-0.3C2.6,12.4,3.8,7.4,7.7,4.9S16.6,3.7,19,7.5C21.4,11.4,20.3,16.5,16.4,18.9"/></svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
     
@@ -75,8 +83,7 @@
                     </p>
     
                     <div class="ss-copyright">
-                        <span>© Booth 2021</span> 
-                        <span>Designed by <a href="https://www.styleshout.com/">StyleShout</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a></span>
+                        <span>© FutsalMate. 2024</span> 
                     </div>
                 </div>
     
@@ -87,6 +94,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"></path></svg>
                 </a>
             </div> <!-- end ss-go-top -->
+            
     
         </footer> <!-- end footer -->
 

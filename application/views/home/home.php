@@ -35,7 +35,7 @@
                 <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
                 <li><a href="#about" class="smoothscroll">About</a></li>
                 <li><a href="#pricing" class="smoothscroll">Pricing</a></li>
-                <li><a href="#download" class="smoothscroll">Download</a></li>
+                <li><a href="#download" class="smoothscroll">Contact</a></li>
             </ul>
         </nav>
 
@@ -517,16 +517,17 @@
                                 <div class="item-plan__block"> 
 
                                     <div class="item-plan__top-part">
-                                        <h3 class="item-plan__title">Pro Plan</h3>
-                                        <p class="item-plan__price"><sup>Rp</sup>100<sup class="item-plan__per">K</p>
-                                        <p class="item-plan__per">Per Month</p>
+                                        <h3 class="item-plan__title">Elite Plan</h3>
+                                        <p class="item-plan__price"><sup>Rp</sup>200<sup class="item-plan__per">K</p>
+                                        <p class="item-plan__per">Per Bulan</p>
                                     </div>
                 
                                     <div class="item-plan__bottom-part">
                                         <ul class="item-plan__features">
-                                            <li><span>5000GB</span> Storage</li>
-                                            <li><span>Unlimited</span> Bandwidth</li>
-                                            <li><span>100</span> Email Accounts</li>
+                                            <li><span>All</span> Features In Pro Plan</li>
+                                            <li><span>Event</span> Organizer</li>
+                                            <li><span>Reporting</span> Analytics</li>
+                                            <li><span>Transaction</span> Management</li>
                                             <li>Backup & Restore</li>
                                         </ul>
                 
@@ -539,9 +540,9 @@
                                 <div class="item-plan__block"> 
 
                                     <div class="item-plan__top-part">
-                                        <h3 class="item-plan__title">Free</h3>
-                                        <p class="item-plan__price"><sup>Rp</sup>0</p>
-                                        <p class="item-plan__per">Forever</p>
+                                        <h3 class="item-plan__title">Pro Plan</h3>
+                                        <p class="item-plan__price"><sup>Rp</sup>100<sup class="item-plan__per">K</p>
+                                        <p class="item-plan__per">Per Bulan</p>
                                     </div>
                 
                                     <div class="item-plan__bottom-part">
@@ -569,22 +570,17 @@
             <section id="download" class="s-download target-section">
                 <div class="row s-download__header">
                     <div class="column lg-12">
-                        <h2 class="text-display-1">Thousands of People Are Now Using Booth. Join Our Community!</h2>
+                        <h2 class="text-display-1">Orang-orang sekarang lagi pakai FutsalMate lohh. Yuk, gabung bersama kami!</h2>
                         <p class="lead">
-                        Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. 
-                        Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat 
-                        omnis ea. Ultrices pellentesque amet tristique feugiat condimentum integer fames. 
+                        Bergabunglah dengan menggunakan sistem kami yang berkembang pesat! Dengan fitur yang inovatif dan mudah digunakan, 
+                        FutsalMate memberikan solusi terbaik untuk pengelolaan lapangan futsal. 
+                        Banyak pengguna telah merasakan manfaatnya, mulai dari kemudahan pengelolaan hingga analisis kinerja.
                         </p>
                     </div>
                 </div>
                 <div class="row s-download__badges-block">
                     <div class="column lg-12 s-download__badges">
-                        <a href="#0" title="" class="badge-appstore">
-                            <img src="<?php echo base_url('assets/home/images/appstore.png'); ?>" alt="">
-                        </a>
-                        <a href="#0" title="" class="badge-googleplay">
-                        <img src="<?php echo base_url('assets/home/images/google-play.png'); ?>" alt="">
-                        </a>
+                        <a href="#download" class="btn">Login</a>
                     </div>
                 </div>
             </section>
