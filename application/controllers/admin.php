@@ -15,4 +15,12 @@ class Admin extends CI_Controller {
         $this->load->view('admin/footer');
 
     }
+
+    public function pelanggan() {
+        $this->load->view('admin/header');
+        $this->load->view('admin/pelanggan');
+        $this->load->view('admin/menu');
+        $this->load->view('admin/footer');
+
+    }
 }

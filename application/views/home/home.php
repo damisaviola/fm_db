@@ -293,24 +293,30 @@
                                     </p>
                                 </div>
                                 <div class="s-about__howto-process-step">
-                                    <h3 class="h5">Create</h3>
+                                    <h3 class="h5">Choose a Subscription Plan</h3>
                                     <p>
-                                    Commodi vero praesentium ex eum sunt. Deserunt animi velit. Eum explicabo omnis at aut perferendis veniam. Corporis expedita 
-                                    voluptas culpa dicta qui tempora non explicabo omnis at sint tempora.
+                                    Setelah mendaftar, Anda harus memilih paket 
+                                    langganan yang sesuai dengan kebutuhan Anda. 
+                                    Kami menawarkan beberapa pilihan paket, 
+                                    mulai dari individu hingga paket untuk tim, 
+                                    dengan berbagai fitur yang dapat diakses. 
                                     </p>
                                 </div>
                                 <div class="s-about__howto-process-step">
-                                    <h3 class="h5">Compose</h3>
+                                    <h3 class="h5">Set Up</h3>
                                     <p>
-                                    Est quam molestias eius. Voluptatibus eveniet debitis natus porro dignissimos quia. Molestias sint ab velit. Perspiciatis porro 
-                                    hic possimus exercitationem sint ab velit architecto fugiat. 
+                                    Sesuaikan semua sesuai dengan kebutuhan Anda, 
+                                    dan tambahkan informasi penting seperti pengelolaan input lapangan, 
+                                    proses pemesanan, 
+                                    serta fitur laporan untuk memudahkan analisis.
                                     </p>
                                 </div>
                                 <div class="s-about__howto-process-step">
-                                    <h3 class="h5">Send</h3>
+                                    <h3 class="h5">Confirm and Manage</h3>
                                     <p>
-                                    Qui aspernatur soluta sapiente voluptas ut a. Non repellat dolores dolorum vel et aut et perferendis. Hic voluptatem odit ab qui. 
-                                    Officia blanditiis molestiae voluptatem odit ab. 
+                                    Setelah menyelesaikan Set up, Anda dapat dengan 
+                                    mudah mengelola semua pemesanan Anda, melihat penyewaan sebelumnya, 
+                                    dan menyesuaikan reservasi mendatang langsung dari dasbor Anda.
                                     </p>
                                 </div>
                             </div> <!-- end how-to process -->
@@ -532,9 +538,10 @@
                     <div class="column lg-4 md-12 s-pricing__header">
                         <h3 class="h2">Our Easy Pricing Plans for Everyone.</h3>
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Urna, sit pretium, proin sed massa maecenas tempus, nibh. 
-                        Ultrices pellentesque amet tristique feugiat condimentum integer fames. 
+                        Menawarkan rencana harga yang fleksibel dan 
+                        terjangkau untuk memenuhi kebutuhan setiap pengguna. 
+                        Apakah Anda pemilik lapangan futsal atau pengelola tim, 
+                        kami memiliki paket yang cocok untuk Anda. 
                         </p>
                     </div> <!-- end s-pricing__header -->
 
