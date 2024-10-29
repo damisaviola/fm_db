@@ -9,7 +9,7 @@ class Register extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('home/register');
+        $this->load->view('auth/register');
     }
 
 }
