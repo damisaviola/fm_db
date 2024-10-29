@@ -71,7 +71,7 @@
         </nav>
 
         <div class="s-header__cta">
-            <a href="#download" class="btn btn--stroke s-header__cta-btn smoothscroll">Login</a>
+        <a href="<?php echo site_url('login'); ?>" class="btn btn--stroke s-header__cta-btn">Login</a>
             <a href="#download" class="btn btn--stroke s-header__cta-btn smoothscroll" style="margin-left: 10px;">Sign Up</a> <!-- Tombol tambahan -->
         </div>
 

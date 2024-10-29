@@ -1,14 +1,20 @@
-<?php
+<?php 
+// application/controllers/Errors.php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Errors extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
     }
 
-    public function index() {
-        $this->load->view('home/home');
+
+    public function index()
+    {
+        $this->load->view('errors/err/error_404'); 
     }
 }
+
+
+?>
