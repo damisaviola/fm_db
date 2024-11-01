@@ -7,11 +7,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FutsalMate</title>
-
-    <script>
+ <!-- CSS
+    ==================================================  <script>
         document.documentElement.classList.remove('no-js');
         document.documentElement.classList.add('js');
-    </script>
+    </script> -->
+   
 
     <!-- CSS
     ================================================== -->
@@ -71,8 +72,8 @@
         </nav>
 
         <div class="s-header__cta">
-        <a href="<?php echo site_url('login'); ?>" class="btn btn--stroke s-header__cta-btn">Login</a>
-        <a href="<?php echo site_url('register'); ?>" class="btn btn--stroke s-header__cta-btn" style="margin-left: 10px;">Sign Up</a> <!-- Tombol tambahan -->
+        <a href="<?php echo site_url('login'); ?>" class="btn btn--stroke s-header__cta-btn">Masuk</a>
+        <a href="<?php echo site_url('register'); ?>" class="btn btn--stroke s-header__cta-btn" style="margin-left: 10px;">daftar</a> <!-- Tombol tambahan -->
         </div>
 
     </div> <!-- end s-header__inner -->
@@ -659,10 +660,8 @@
                     </div>
     
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed 
-                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                    laboris nisi ut.
+                    Kami berkomitmen untuk memberikan solusi terbaik dalam pengelolaan lapangan futsal. 
+                    Untuk pertanyaan atau dukungan, jangan ragu untuk menghubungi kami.
                     </p>
     
                     <ul class="s-footer__social">
@@ -703,7 +702,7 @@
                     </ul>
     
                     <p class="s-footer__contact">
-                        Do you have a question? Send us a word: <br>
+                        Punya pertanyaan? Hubungi kami : <br>
                         <a href="mailto:#0" class="s-footer__mail-link">futsalmate@gmail.com</a>
                     </p>
     

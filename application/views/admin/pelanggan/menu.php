@@ -25,7 +25,7 @@
 
                         <li class="sidebar-item active">
                             <a href="#" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
+                                <i class="bi "></i>
                                 <span>Pelanggan</span>
                             </a>
                             <ul class="submenu ">

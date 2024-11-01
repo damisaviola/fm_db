@@ -29,6 +29,7 @@ $uri = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
 
 $config['base_url'] = $protocol . $host . $uri . '/';
 
+
 /*
 |--------------------------------------------------------------------------
 | Index File
