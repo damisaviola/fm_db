@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/assets/css/pages/auth.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/assets/css/bootstrap.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/assets/vendors/iconly/bold.css'); ?>">
+
+    
+     <!-- Favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets/home/apple-touch-icon.png'); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('assets/home/favicon-32x32.png'); ?>"> <!-- ini icon title --->
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/home/favicon-16x16.png'); ?>">
+    <link rel="manifest" href="<?php echo base_url('assets/home/site.webmanifest'); ?>">
 </head>
 
 <body>
@@ -20,10 +28,10 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a>
+                       
                     </div>
                     <h1 class="auth-title">Masuk.</h1>
-                    <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
+                    <p class="auth-subtitle mb-5">Masuk dengan data yang Anda masukkan saat pendaftaran.</p>
 
                     <form action="index.html">
                         <div class="form-group position-relative has-icon-left mb-4">
