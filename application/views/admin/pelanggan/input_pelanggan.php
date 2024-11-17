@@ -33,7 +33,7 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html">Pelanggan</a>
+                                <a href="<?php echo site_url('pelanggan'); ?>">Pelanggan</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 Input Pelanggan
@@ -49,9 +49,6 @@
                     <div class="row match-height">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Multiple Column</h4>
-                                </div>
                                 <div class="card-content">
                                     <div class="card-body">
                                         <form class="form">

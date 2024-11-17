@@ -21,20 +21,21 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-item has-sub active">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-people-fill"></i>
-                                <span>Pelanggan</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="component-alert.html">Daftar Pelanggan</a>
-                                </li>
-                                <li class="submenu-item active">
-                                    <a href="component-badge.html">Input Pelanggan</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <li class="sidebar-item has-sub <?php echo (uri_string() == 'pelanggan' || uri_string() == 'input_pelanggan') ? 'active' : ''; ?>">
+                            <!-- Tidak ada <a href> pada item utama "Pelanggan" -->
+                        <div class="sidebar-link">
+                            <i class="bi bi-people-fill"></i>
+                            <span>Pelanggan</span>
+                        </div>
+                        <ul class="submenu">
+                            <li class="submenu-item <?php echo (uri_string() == 'pelanggan') ? 'active' : ''; ?>">
+                                <a href="<?php echo site_url('pelanggan'); ?>">Daftar Pelanggan</a>
+                            </li>
+                            <li class="submenu-item <?php echo (uri_string() == 'input_pelanggan') ? 'active' : ''; ?>">
+                                <a href="<?php echo site_url('input_pelanggan'); ?>">Input Pelanggan</a>
+                            </li>
+                        </ul>
+                    </li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>

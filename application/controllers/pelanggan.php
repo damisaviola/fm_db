@@ -25,6 +25,14 @@ class Pelanggan extends CI_Controller {
 
     }
 
+    public function daftar_pelanggan() {
+        $this->load->view('admin/pelanggan/header');
+        $this->load->view('admin/pelanggan/pelanggan');
+        $this->load->view('admin/pelanggan/menu');
+        $this->load->view('admin/pelanggan/footer');
+
+    }
+
 
     
 
