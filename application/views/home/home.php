@@ -347,9 +347,8 @@
                         </div>
                         <div class="column lg-6 stack-on-1000 desc-block">
                             <p class="desc lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, sit pretium, 
-                            proin sed massa maecenas tempus, nibh. Ultrices pellentesque amet tristique 
-                            feugiat condimentum integer fames.
+                            Aplikasi kami dirancang untuk merevolusi cara Anda mengelola lapangan futsal, 
+                            menawarkan berbagai fitur hebat yang memenuhi kebutuhan Anda.
                             </p>
                         </div>
                     </div>
@@ -362,9 +361,8 @@
                             </div>
                             <div class="s-about__feature-text">
                                 <h3 class="h5">Cloud Based</h3>
-                                <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
-                                Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                                Sunt suscipit voluptas ipsa in tempora esse soluta sint aliquam rhoncus elit.
+                                <p>Aplikasi sepenuhnya berbasis cloud, memungkinkan Anda mengaksesnya kapan saja dan di mana saja. 
+                                Anda tidak perlu khawatir tentang kehilangan data atau masalah akses. 
                                 </p>
                             </div>
                         </div>
@@ -374,10 +372,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M18 7c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-3.333L22 17V7l-4 3.333V7zm-1.998 10H4V7h12l.001 4.999L16 12l.001.001.001 4.999z"></path></svg>
                             </div>
                             <div class="s-about__feature-text">
-                                <h3 class="h5">Voice & Video</h3>
-                                <p>Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est. Quis risus sed vulputate 
-                                odio ut. Lectus arcu bibendum at varius vel. Lorem ipsum dolor sit amet consectetur adipiscing 
-                                elit pellentesque. In nulla posuere sollicitudin aliquam ultrices.
+                                <h3 class="h5">Booking Management</h3>
+                                <p>Sistem menyederhanakan proses pemesanan lapangan dan pengelolaan jadwal pemesanan. 
+                                    Antarmuka yang intuitif memungkinkan Anda untuk memeriksa ketersediaan lapangan dan mengatur pemesanan dengan cepat dan efisien.
                                 </p>
                             </div>
                         </div>
@@ -388,9 +385,9 @@
                             </div>
                             <div class="s-about__feature-text">
                                 <h3 class="h5">Always Secure</h3>
-                                <p>Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Eu scelerisque felis 
-                                imperdiet proin fermentum leo. Cursus turpis massa tincidunt dui. Quis commodo odio aenean sed 
-                                adipiscing diam donec adipiscing. Congue mauris rhoncus elit.
+                                <p>Keamanan data adalah prioritas utama. Dengan enkripsi dan protokol keamanan canggih, 
+                                    sistem ini melindungi informasi Anda dari akses yang tidak sah, 
+                                    sehingga Anda bisa tenang mengetahui semua data aman.
                                 </p>
                             </div>
                         </div>
@@ -400,10 +397,9 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M22 8.65A5 5 0 0 0 17 4H7a5 5 0 0 0-5 4.74A2 2 0 0 0 2 9v7.5A3.48 3.48 0 0 0 5.5 20c1.43 0 2.32-1.06 3.19-2.09.32-.37.65-.76 1-1.1a4.81 4.81 0 0 1 1.54-.75 6.61 6.61 0 0 1 1.54 0 4.81 4.81 0 0 1 1.54.75c.35.34.68.73 1 1.1.87 1 1.76 2.09 3.19 2.09a3.48 3.48 0 0 0 3.5-3.5V9a2.09 2.09 0 0 0 0-.26zm-2 7.85a1.5 1.5 0 0 1-1.5 1.5c-.5 0-1-.64-1.66-1.38-.34-.39-.72-.85-1.15-1.26a6.68 6.68 0 0 0-2.46-1.25 6.93 6.93 0 0 0-2.46 0 6.68 6.68 0 0 0-2.46 1.25c-.43.41-.81.87-1.15 1.26C6.54 17.36 6 18 5.5 18A1.5 1.5 0 0 1 4 16.5V9a.77.77 0 0 0 0-.15A3 3 0 0 1 7 6h10a3 3 0 0 1 3 2.72v.12A.86.86 0 0 0 20 9z"></path><circle cx="16" cy="12" r="1"></circle><circle cx="18" cy="10" r="1"></circle><circle cx="16" cy="8" r="1"></circle><circle cx="14" cy="10" r="1"></circle><circle cx="8" cy="10" r="2"></circle></svg>
                             </div>
                             <div class="s-about__feature-text">
-                                <h3 class="h5">Play Games</h3>
-                                <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
-                                Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                                Sunt suscipit voluptas ipsa in tempora esse soluta sint donec adipiscing.
+                                <h3 class="h5">Event Organizer</h3>
+                                <p>Fitur ini memberikan sebuah layanan untuk melakukan manajemen Event dimana pengguna dapat melihat event yang akan di selenggarakan. 
+                                    Sehingga  dapat memanjemen pemesanan yang berbeda dan teroganisir
                                 </p>
                             </div>
                         </div>
@@ -413,10 +409,10 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M16 2H8C4.691 2 2 4.691 2 8v12a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm4 13c0 2.206-1.794 4-4 4H4V8c0-2.206 1.794-4 4-4h8c2.206 0 4 1.794 4 4v7z"></path><circle cx="9.5" cy="11.5" r="1.5"></circle><circle cx="14.5" cy="11.5" r="1.5"></circle></svg>
                             </div>
                             <div class="s-about__feature-text">
-                                <h3 class="h5">Group Chat</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                                ut labore et dolore magna aliqua. Venenatis lectus magna fringilla urna. Lectus vestibulum 
-                                mattis ullamcorper velit sed ullamcorper morbi. Sit amet aliquam.
+                                <h3 class="h5">Reporting and Analytics</h3>
+                                <p>Fitur laporan memberikan wawasan mendalam tentang penggunaan lapangan dan pendapatan. 
+                                    Anda dapat menganalisis kinerja dan mendapatkan data 
+                                    penting untuk membantu pengambilan keputusan yang lebih baik.
                                 </p>
                             </div>
                         </div>
@@ -427,10 +423,9 @@
                                     <path d="M16 12h2v4h-2z"></path><path d="M20 7V5c0-1.103-.897-2-2-2H5C3.346 3 2 4.346 2 6v12c0 2.201 1.794 3 3 3h15c1.103 0 2-.897 2-2V9c0-1.103-.897-2-2-2zM5 5h13v2H5a1.001 1.001 0 0 1 0-2zm15 14H5.012C4.55 18.988 4 18.805 4 18V8.815c.314.113.647.185 1 .185h15v10z"></path></svg>
                             </div>
                             <div class="s-about__feature-text">
-                                <h3 class="h5">Payments</h3>
-                                <p>Nullam eget felis eget nunc. Adipiscing commodo elit at imperdiet dui accumsan. Condimentum 
-                                mattis pellentesque id nibh tortor id aliquet lectus proin. Orci eu lobortis elementum nibh 
-                                tellus. Tortor vitae purus faucibus ornare suspendisse.
+                                <h3 class="h5">Transaction Management</h3>
+                                <p>sistem pembayaran yang aman dan nyaman. Sistem kami mendukung berbagai metode pembayaran,
+                                     memungkinkan pengguna untuk menyelesaikan transaksi dengan cepat dan efisien. 
                                 </p>
                             </div>
                         </div>
@@ -583,9 +578,9 @@
                 
                                     <div class="item-plan__bottom-part">
                                         <ul class="item-plan__features">
-                                            <li><span>50GB</span> Storage</li>
-                                            <li><span>50GB</span> Bandwidth</li>
-                                            <li><span>30</span> Email Accounts</li>
+                                            <li><span>Scedule </span> Management</li>
+                                            <li><span>Booking </span> Management</li>
+                                            <li><span>Futsal Court </span>  Management</li>
                                             <li>Backup & Restore</li>
                                         </ul>
                 

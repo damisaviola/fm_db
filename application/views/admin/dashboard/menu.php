@@ -15,7 +15,7 @@
                         
 
                         <li class="sidebar-item active ">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="<?php echo site_url('admin'); ?>" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -28,10 +28,10 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="component-alert.html">Daftar Pelanggan</a>
+                                    <a href="<?php echo site_url('pelanggan'); ?>">Daftar Pelanggan</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="component-badge.html">Input Pelanggan</a>
+                                    <a href="<?php echo site_url('input_pelanggan'); ?>">Input Pelanggan</a>
                                 </li>
                             </ul>
                         </li>
@@ -39,49 +39,34 @@
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
-                                <span>Extra Components</span>
+                                <span>Lapangan</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="extra-component-avatar.html">Avatar</a>
+                                    <a href="extra-component-avatar.html">Daftar Lapangan</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="extra-component-sweetalert.html">Sweet Alert</a>
+                                    <a href="extra-component-sweetalert.html">Input Lapangan</a>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-toastify.html">Toastify</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-rating.html">Rating</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-divider.html">Divider</a>
-                                </li>
+                               
                             </ul>
                         </li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Layouts</span>
+                                <span>Booking</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="layout-default.html">Default Layout</a>
+                                    <a href="layout-default.html">Daftar Booking</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="layout-vertical-1-column.html">1 Column</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="layout-vertical-navbar.html">Vertical with Navbar</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="layout-horizontal.html">Horizontal Menu</a>
+                                    <a href="layout-vertical-1-column.html">Input Booking</a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li class="sidebar-title">Forms &amp; Tables</li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>

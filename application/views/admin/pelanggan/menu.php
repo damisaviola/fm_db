@@ -2,8 +2,7 @@
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
-                        <div class="logo">
-                            <a href="index.html"><img src="<?php echo base_url('assets/admin/dist/assets/images/logo/logo.png'); ?>" alt="Logo"></a>
+                        <div class="logo"> 
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -13,63 +12,26 @@
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
+                        
 
-                        <li class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                        <li class="sidebar-item ">
+                            <a href="<?php echo site_url('admin'); ?>" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
 
-                        
-
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item has-sub active">
                             <a href="#" class='sidebar-link'>
-                                <i class="bi "></i>
+                                <i class="bi bi-people-fill"></i>
                                 <span>Pelanggan</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="component-alert.html">Alert</a>
+                                    <a href="component-alert.html">Daftar Pelanggan</a>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="component-badge.html">Badge</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-breadcrumb.html">Breadcrumb</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-button.html">Button</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-card.html">Card</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-carousel.html">Carousel</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-dropdown.html">Dropdown</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-list-group.html">List Group</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-modal.html">Modal</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-navs.html">Navs</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-pagination.html">Pagination</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-progress.html">Progress</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-spinner.html">Spinner</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="component-tooltip.html">Tooltip</a>
+                                <li class="submenu-item active">
+                                    <a href="component-badge.html">Input Pelanggan</a>
                                 </li>
                             </ul>
                         </li>
@@ -77,49 +39,34 @@
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
-                                <span>Extra Components</span>
+                                <span>Lapangan</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="extra-component-avatar.html">Avatar</a>
+                                    <a href="extra-component-avatar.html">Daftar Lapangan</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="extra-component-sweetalert.html">Sweet Alert</a>
+                                    <a href="extra-component-sweetalert.html">Input Lapangan</a>
                                 </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-toastify.html">Toastify</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-rating.html">Rating</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-divider.html">Divider</a>
-                                </li>
+                               
                             </ul>
                         </li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Layouts</span>
+                                <span>Booking</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="layout-default.html">Default Layout</a>
+                                    <a href="layout-default.html">Daftar Booking</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="layout-vertical-1-column.html">1 Column</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="layout-vertical-navbar.html">Vertical with Navbar</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="layout-horizontal.html">Horizontal Menu</a>
+                                    <a href="layout-vertical-1-column.html">Input Booking</a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li class="sidebar-title">Forms &amp; Tables</li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
