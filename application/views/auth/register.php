@@ -21,53 +21,111 @@
 
 <body>
     <div id="auth">
+    <div class="row h-100">
+    <div class="col-lg-5 col-12">
+        <div id="auth-left">
+            
+    <?php if ($this->session->flashdata('message')): ?>
+            <div class="alert alert-success">
+                <?php echo $this->session->flashdata('message'); ?>
+            </div>
+        <?php endif; ?>
 
-        <div class="row h-100">
-            <div class="col-lg-5 col-12">
-                <div id="auth-left">
-                    <h1 class="auth-title">Sign Up</h1>
-                    <p class="auth-subtitle mb-5">Input your data to register to our website.</p>
+        <?php if ($this->session->flashdata('error')): ?>
+            <div class="alert alert-danger">
+                <?php echo $this->session->flashdata('error'); ?>
+            </div>
+        <?php endif; ?>
+            <h1 class="auth-title">Daftar</h1>
+            <p class="auth-subtitle mb-5">Masukan data anda untuk melakukan pendaftran akun pada sistem kami.</p>
 
-                    <form action="index.html">
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Email">
-                            <div class="form-control-icon">
-                                <i class="bi bi-envelope"></i>
-                            </div>
-                        </div>
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Nama lengkap">
-                            <div class="form-control-icon">
-                                <i class="bi bi-person"></i>
-                            </div>
-                        </div>
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Kata Sandi">
-                            <div class="form-control-icon">
-                                <i class="bi bi-shield-lock"></i>
-                            </div>
-                        </div>
-                        <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="tel" name="phone" class="form-control form-control-xl" placeholder="Masukkan Nomor HP" pattern="[0-9]{10,13}" required>
-                            <div class="form-control-icon">
-                                <i class="bi bi-phone"></i>
-                            </div>
-                        </div>
-                        <button class="btn btn-success btn-block btn-lg shadow-lg mt-5">Sign Up</button>
-                    </form>
-                    <div class="text-center mt-5 text-lg fs-4">
-                        <p class='text-gray-600'>Already have an account? <a href="auth-login.html"
-                                class="font-bold">Log
-                                in</a>.</p>
+            <form id="signupForm" action="<?php echo site_url('auth/register/register_user'); ?>" method="post">
+                <div class="form-group position-relative has-icon-left mb-3">
+                    <input type="text" name="email" class="form-control form-control-xl" placeholder="Email" autocomplete="email" required>
+                    <div class="form-control-icon">
+                        <i class="bi bi-envelope"></i>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-7 d-none d-lg-block">
-                <div id="auth-right">
-
+                <div class="form-group position-relative has-icon-left mb-3">
+                    <input type="text" name="full_name" class="form-control form-control-xl" placeholder="Nama lengkap" autocomplete="name" required>
+                    <div class="form-control-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
                 </div>
+                <div class="form-group position-relative has-icon-left mb-3">
+                    <input type="password" id="password" name="password" class="form-control form-control-xl" placeholder="Kata Sandi" autocomplete="new-password" required>
+                    <div class="form-control-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                </div>
+                <small id="passwordMatchMessage" class="validation-message"></small>
+                <div class="form-group position-relative has-icon-left mb-3">
+                    <input type="password" id="confirm_password" class="form-control form-control-xl" placeholder="Konfirmasi Kata Sandi" autocomplete="new-password" required>
+                    <div class="form-control-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                    
+                </div>
+                <div class="form-group position-relative has-icon-left mb-3">
+                    <input type="tel" name="phone" class="form-control form-control-xl" placeholder="Masukkan Nomor HP" autocomplete="tel" pattern="[0-9]{10,13}" required>
+                    <div class="form-control-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                </div>
+                <button type="submit" id="submitBtn" class="btn btn-success btn-block btn-lg shadow-lg mt-4" disabled>Sign Up</button>
+            </form>
+            <div class="text-center mt-4 text-lg fs-4">
+                <p class='text-gray-600'>Sudah mempunyai akun? 
+                    <a href="<?php echo site_url('login'); ?>" class="font-bold">Masuk</a>.
+                </p>
             </div>
         </div>
+    </div>
+    <div class="col-lg-7 d-none d-lg-block">
+        <div id="auth-right"></div>
+    </div>
+</div>
+
+
+<style>
+    /* Styling untuk small */
+    .validation-message {
+        margin-top: 2px; /* Jarak sangat dekat dengan field */
+        font-size: 12px;
+        color: #6c757d; /* Default warna abu-abu */
+        display: block;
+    }
+</style>
+
+<script>
+    const passwordField = document.getElementById('password');
+    const confirmPasswordField = document.getElementById('confirm_password');
+    const passwordMatchMessage = document.getElementById('passwordMatchMessage');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function checkPasswordMatch() {
+        const password = passwordField.value;
+        const confirmPassword = confirmPasswordField.value;
+
+        if (password === confirmPassword && password !== "") {
+            passwordMatchMessage.textContent = "Kata sandi cocok.";
+            passwordMatchMessage.style.color = "green";
+            submitBtn.disabled = false;
+        } else if (password !== "" && confirmPassword !== "") {
+            passwordMatchMessage.textContent = "Kata sandi tidak cocok.";
+            passwordMatchMessage.style.color = "red";
+            submitBtn.disabled = true;
+        } else {
+            passwordMatchMessage.textContent = "";
+            passwordMatchMessage.style.color = "#6c757d"; /* Default warna abu-abu */
+            submitBtn.disabled = true;
+        }
+    }
+
+    passwordField.addEventListener('input', checkPasswordMatch);
+    confirmPasswordField.addEventListener('input', checkPasswordMatch);
+</script>
+
 
     </div>
 </body>
