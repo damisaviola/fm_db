@@ -26,7 +26,6 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <!-- Logo jika ada -->
                     </div>
 
                     <!-- Pesan Error atau Sukses -->
@@ -47,7 +46,7 @@
 
                     <!-- Form Login -->
                     <form action="<?php echo site_url('auth/login/authenticate'); ?>" method="POST">
-                        <!-- CSRF Token -->
+    
                         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 
                         <div class="form-group position-relative has-icon-left mb-4">
@@ -71,6 +70,7 @@
                                 Tetap Login
                             </label>
                         </div>
+
 
                         <!-- Submit Button -->
                         <button type="submit" class="btn btn-success btn-block btn-lg shadow-lg mt-5">Masuk</button>

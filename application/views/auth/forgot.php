@@ -27,10 +27,9 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a>
                     </div>
-                    <h1 class="auth-title">Forgot Password</h1>
-                    <p class="auth-subtitle mb-5">Input your email and we will send you reset password link.</p>
+                    <h1 class="auth-title">Lupa Password</h1>
+                    <p class="auth-subtitle mb-5">Masukan email anda dan kami akan mengirim link untuk mereset kata sandi.</p>
 
                     <form action="index.html">
                         <div class="form-group position-relative has-icon-left mb-4">
@@ -39,11 +38,11 @@
                                 <i class="bi bi-envelope"></i>
                             </div>
                         </div>
-                        <button class="btn btn-success btn-block btn-lg shadow-lg mt-5">Send</button>
+                        <button class="btn btn-success btn-block btn-lg shadow-lg mt-5">Kirim</button>
                     </form>
                     <div class="text-center mt-5 text-lg fs-4">
                     <p class="text-gray-600">
-                            Remember your account? <a href="<?php echo site_url('login'); ?>" class="font-bold">Log in</a>.
+                            Ingat kata sandi? <a href="<?php echo site_url('login'); ?>" class="font-bold">Masuk</a>.
                         </p>
 
                 </div>

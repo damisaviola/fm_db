@@ -31,18 +31,19 @@ class User_model extends CI_Model {
     public function check_user($email, $password) {
         $this->db->where('email', $email);
         $query = $this->db->get('users');
-
+    
         if ($query->num_rows() == 1) {
             $user = $query->row();
-
             if (password_verify($password, $user->password)) {
-                if ($user->is_active == 1) {
-                    return $user;
-                }
+                return $user;
             }
         }
-        return false;
+    
+        return FALSE;
     }
+    
+
+    
 
     public function get_user_by_id($user_id) {
        

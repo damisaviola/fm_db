@@ -55,6 +55,6 @@ $route['login/identify'] = 'auth/login/forget';
 $route['register'] = 'auth/register';
 $route['auth/login'] = 'auth/forbidden';
 $route['404_override'] = 'errors';
-$route['input_pelanggan'] = 'pelanggan/input_pelanggan';
+$route['admin/nput_pelanggan'] = 'pelanggan/input_pelanggan';
 $route['pelanggan'] = 'pelanggan/daftar_pelanggan';
 $route['translate_uri_dashes'] = FALSE;

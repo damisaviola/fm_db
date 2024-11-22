@@ -20,7 +20,7 @@ class Admin extends CI_Controller {
         $user_id = $this->session->userdata('user_id');
         $user = $this->User_model->get_user_by_id($user_id);
 
-        if (!$user || $user->status != 'active') {
+        if (!$user || $user->is_active != '1') {
             $this->session->set_flashdata('error', 'Akun Anda belum aktif atau belum .');
             redirect('login'); 
         }
