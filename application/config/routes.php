@@ -49,12 +49,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+//default router
 $route['default_controller'] = 'home';
+
+
 $route['login'] = 'auth/login';
+$route['lupa-password'] = 'auth/forgot';
 $route['login/identify'] = 'auth/login/forget';
 $route['register'] = 'auth/register';
+
+// error
+$route['auth/forgot'] = 'auth/forbidden';
 $route['auth/login'] = 'auth/forbidden';
 $route['404_override'] = 'errors';
-$route['admin/nput_pelanggan'] = 'pelanggan/input_pelanggan';
-$route['pelanggan'] = 'pelanggan/daftar_pelanggan';
+
+
+
+$route['admin/input_pelanggan'] = 'pelanggan/input_pelanggan';
+$route['admin/pelanggan'] = 'pelanggan/daftar_pelanggan';
 $route['translate_uri_dashes'] = FALSE;

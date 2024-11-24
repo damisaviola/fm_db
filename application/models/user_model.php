@@ -51,5 +51,35 @@ class User_model extends CI_Model {
         $query = $this->db->get('users'); 
         return $query->row();  
     }
+
+    public function get_user_by_email($email) {
+        $this->db->where('email', $email);
+        return $this->db->get('users')->row();
+    }
+
+    public function save_reset_token($user_id, $token) {
+        $data = [
+            'reset_token' => $token,
+            'token_expiry' => date('Y-m-d H:i:s', strtotime('+1 hour'))
+        ];
+        $this->db->where('id', $user_id);
+        $this->db->update('users', $data);
+    }
+    public function get_user_by_token($token) {
+        $this->db->where('reset_token', $token);
+        $this->db->where('token_expiry >', date('Y-m-d H:i:s'));
+        return $this->db->get('users')->row();
+    }
+
+    public function update_password($user_id, $password) {
+        $this->db->where('id', $user_id);
+        $this->db->update('users', ['password' => $password, 'reset_token' => NULL]);
+    }
+    
+    public function clear_reset_token($user_id) {
+        $this->db->where('id', $user_id);
+        $this->db->update('users', ['reset_token' => NULL, 'token_expiry' => NULL]);
+    }
+    
     
 }
