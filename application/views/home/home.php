@@ -153,30 +153,6 @@
             ----------------------------------------------- -->
             <section id="about" class="s-about target-section">
 
-
-                <!-- stats -->
-                <div class="row block-lg-one-fourth block-tab-one-half block-stack s-about__stats">
-
-                    <div class="column s-about__stats-item">
-                        <div class="s-about__stats-count">554<span>k</span></div>
-                        <h5>Total Downloads</h5>
-                    </div>
-                    <div class="column s-about__stats-item">
-                        <div class="s-about__stats-count">22<span>k</span></div>
-                        <h5>Daily Visitors</h5>
-                    </div>
-                    <div class="column s-about__stats-item">
-                        <div class="s-about__stats-count">99<span>%</span></div>
-                        <h5>Positive Rating</h5>
-                    </div>
-                    <div class="column s-about__stats-item">
-                        <div class="s-about__stats-count">526<span>k</span></div>
-                        <h5>Happy Users</h5>
-                    </div>
-
-                </div> <!-- end stats -->
-
-
                 <!-- intro info -->
                 <div class="s-about__info">
 
@@ -246,31 +222,6 @@
                     </div> <!-- end s-about__info-slider-block -->
 
                 </div> <!-- end s-about__info -->
-
-
-                <!-- screens -->
-                <div class="row s-about__screens-block">
-                    <div class="column lg-12">
-
-                    <div class="s-about__screens">
-                        <div class="s-about__screen">
-                            <img src="<?php echo base_url('assets/home/images/screens/screen-03.png'); ?>"
-                                srcset="<?php echo base_url('assets/home/images/screens/screen-03.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-03@2x.png'); ?> 2x" alt="">
-                        </div>
-                        <div class="s-about__screen">
-                            <img src="<?php echo base_url('assets/home/images/screens/screen-02.png'); ?>"
-                                srcset="<?php echo base_url('assets/home/images/screens/screen-02.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-02@2x.png'); ?> 2x" alt="">
-                        </div>
-                        <div class="s-about__screen">
-                            <img src="<?php echo base_url('assets/home/images/screens/screen-01.png'); ?>"
-                                srcset="<?php echo base_url('assets/home/images/screens/screen-01.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-01@2x.png'); ?> 2x" alt="">
-                        </div>
-                    </div>
-
-
-                    </div>
-                </div> <!-- end screens -->
-
 
                 <!-- how-to -->
                 <div class="s-about__howto">
@@ -611,7 +562,7 @@
                 </div>
                 <div class="row s-download__badges-block">
                     <div class="column lg-12 s-download__badges">
-                        <a href="#download" class="btn">Masuk</a>
+                        <a href="<?php echo site_url('login'); ?>" class="btn">Masuk</a>
                     </div>
                 </div>
             </section>

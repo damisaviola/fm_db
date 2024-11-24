@@ -50,14 +50,14 @@
                         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" name="email" class="form-control form-control-xl" placeholder="Email" value="<?php echo set_value('email'); ?>" required>
+                            <input type="text" name="email" class="form-control form-control-xl" placeholder="Email" value="<?php echo set_value('email'); ?>">
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
                         </div>
 
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" name="password" class="form-control form-control-xl" placeholder="Kata Sandi" required>
+                            <input type="password" name="password" class="form-control form-control-xl" placeholder="Kata Sandi">
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
                             </div>

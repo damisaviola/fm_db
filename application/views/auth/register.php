@@ -41,33 +41,33 @@
 
             <form id="signupForm" action="<?php echo site_url('auth/register/register_user'); ?>" method="post">
                 <div class="form-group position-relative has-icon-left mb-3">
-                    <input type="text" name="email" class="form-control form-control-xl" placeholder="Email" autocomplete="email" required>
+                    <input type="text" name="email" class="form-control form-control-xl" placeholder="Email" autocomplete="email" >
                     <div class="form-control-icon">
                         <i class="bi bi-envelope"></i>
                     </div>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-3">
-                    <input type="text" name="full_name" class="form-control form-control-xl" placeholder="Nama lengkap" autocomplete="name" required>
+                    <input type="text" name="full_name" class="form-control form-control-xl" placeholder="Nama lengkap" autocomplete="name" >
                     <div class="form-control-icon">
                         <i class="bi bi-person"></i>
                     </div>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-3">
-                    <input type="password" id="password" name="password" class="form-control form-control-xl" placeholder="Kata Sandi" autocomplete="new-password" required>
+                    <input type="password" id="password" name="password" class="form-control form-control-xl" placeholder="Kata Sandi" autocomplete="new-password">
                     <div class="form-control-icon">
                         <i class="bi bi-shield-lock"></i>
                     </div>
                 </div>
                 <small id="passwordMatchMessage" class="validation-message"></small>
                 <div class="form-group position-relative has-icon-left mb-3">
-                    <input type="password" id="confirm_password" class="form-control form-control-xl" placeholder="Konfirmasi Kata Sandi" autocomplete="new-password" required>
+                    <input type="password" id="confirm_password" class="form-control form-control-xl" placeholder="Konfirmasi Kata Sandi" autocomplete="new-password">
                     <div class="form-control-icon">
                         <i class="bi bi-shield-lock"></i>
                     </div>
                     
                 </div>
                 <div class="form-group position-relative has-icon-left mb-3">
-                    <input type="tel" name="phone" class="form-control form-control-xl" placeholder="Masukkan Nomor HP" autocomplete="tel" pattern="[0-9]{10,13}" required>
+                    <input type="tel" name="phone" class="form-control form-control-xl" placeholder="Masukkan Nomor HP" autocomplete="tel" pattern="[0-9]{10,13}">
                     <div class="form-control-icon">
                         <i class="bi bi-phone"></i>
                     </div>
@@ -88,11 +88,10 @@
 
 
 <style>
-    /* Styling untuk small */
     .validation-message {
-        margin-top: 2px; /* Jarak sangat dekat dengan field */
+        margin-top: 2px; 
         font-size: 12px;
-        color: #6c757d; /* Default warna abu-abu */
+        color: #6c757d; 
         display: block;
     }
 </style>
@@ -117,7 +116,7 @@
             submitBtn.disabled = true;
         } else {
             passwordMatchMessage.textContent = "";
-            passwordMatchMessage.style.color = "#6c757d"; /* Default warna abu-abu */
+            passwordMatchMessage.style.color = "#6c757d"; 
             submitBtn.disabled = true;
         }
     }

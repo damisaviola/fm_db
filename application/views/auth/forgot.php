@@ -43,7 +43,7 @@
                     <form action="<?php echo site_url('auth/forgot/reset_password_request'); ?>" method="POST">
                         <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="email" name="email" class="form-control form-control-xl" placeholder="Email" required>
+                            <input type="email" name="email" class="form-control form-control-xl" placeholder="Email">
                             <div class="form-control-icon">
                                 <i class="bi bi-envelope"></i>
                             </div>
@@ -52,7 +52,7 @@
                     </form>
                     <div class="text-center mt-5 text-lg fs-4">
                         <p class="text-gray-600">
-                            Ingat kata sandi? <a href="<?php echo site_url('auth/login'); ?>" class="font-bold">Masuk</a>.
+                            Ingat kata sandi? <a href="<?php echo site_url('login'); ?>" class="font-bold">Masuk</a>.
                         </p>
                     </div>
                 </div>

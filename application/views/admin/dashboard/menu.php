@@ -14,28 +14,27 @@
                         <li class="sidebar-title">Menu</li>
                         
 
-                        <li class="sidebar-item active ">
-                            <a href="<?php echo site_url('admin'); ?>" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
-                            </a>
+                        <li class="sidebar-item <?php echo (uri_string() == 'admin') ? 'active' : ''; ?>">
+                                <a href="<?php echo site_url('admin'); ?>" class="sidebar-link">
+                                    <i class="bi bi-grid-fill"></i>
+                                    <span>Dashboard</span>
+                                </a>
                         </li>
 
-                        <li class="sidebar-item has-sub <?php echo (uri_string() == 'pelanggan' || uri_string() == 'input_pelanggan') ? 'active' : ''; ?>">
-                            <!-- Tidak ada <a href> pada item utama "Pelanggan" -->
-                        <div class="sidebar-link">
-                            <i class="bi bi-people-fill"></i>
-                            <span>Pelanggan</span>
-                        </div>
-                        <ul class="submenu">
-                            <li class="submenu-item <?php echo (uri_string() == 'pelanggan') ? 'active' : ''; ?>">
-                                <a href="<?php echo site_url('pelanggan'); ?>">Daftar Pelanggan</a>
+                        <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/pelanggan' || uri_string() == 'admin/input_pelanggan') ? 'active' : ''; ?>">
+                                <div class="sidebar-link">
+                                    <i class="bi bi-people-fill"></i>
+                                    <span>Pelanggan</span>
+                                </div>
+                                <ul class="submenu">
+                                    <li class="submenu-item <?php echo (uri_string() == 'admin/pelanggan') ? 'active' : ''; ?>">
+                                        <a href="<?php echo site_url('admin/pelanggan'); ?>">Daftar Pelanggan</a>
+                                    </li>
+                                    <li class="submenu-item <?php echo (uri_string() == 'admin/input_pelanggan') ? 'active' : ''; ?>">
+                                        <a href="<?php echo site_url('admin/input_pelanggan'); ?>">Input Pelanggan</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="submenu-item <?php echo (uri_string() == 'input_pelanggan') ? 'active' : ''; ?>">
-                                <a href="<?php echo site_url('input_pelanggan'); ?>">Input Pelanggan</a>
-                            </li>
-                        </ul>
-                    </li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>

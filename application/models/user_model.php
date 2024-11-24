@@ -42,9 +42,6 @@ class User_model extends CI_Model {
         return FALSE;
     }
     
-
-    
-
     public function get_user_by_id($user_id) {
        
         $this->db->where('id', $user_id);

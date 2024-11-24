@@ -55,17 +55,18 @@ $route['default_controller'] = 'home';
 
 
 $route['login'] = 'auth/login';
+$route['admin'] = 'admin/admin';
 $route['lupa-password'] = 'auth/forgot';
 $route['login/identify'] = 'auth/login/forget';
 $route['register'] = 'auth/register';
 
-// error
+// error routes
 $route['auth/forgot'] = 'auth/forbidden';
 $route['auth/login'] = 'auth/forbidden';
 $route['404_override'] = 'errors';
 
 
-
-$route['admin/input_pelanggan'] = 'pelanggan/input_pelanggan';
-$route['admin/pelanggan'] = 'pelanggan/daftar_pelanggan';
+// pelanggan routes
+$route['admin/input_pelanggan'] = 'admin/pelanggan/input_pelanggan';
+$route['admin/pelanggan'] = 'admin/pelanggan/daftar_pelanggan';
 $route['translate_uri_dashes'] = FALSE;

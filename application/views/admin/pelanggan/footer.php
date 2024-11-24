@@ -21,8 +21,30 @@
     </script>
     <?php endif; ?>
     <script src="<?php echo base_url('assets/admin/dist/assets/js/main.js'); ?>"></script>
-    
-</body>
 
+     <!-- Sweey alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    function confirmLogout(event) {
+        event.preventDefault(); 
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Anda akan keluar dari sesi ini!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d31',
+            confirmButtonText: 'Ya, keluar',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "<?php echo site_url('auth/login/logout'); ?>";
+            }
+        });
+    }
+</script>
+    
+
+</body>
 </html>
 

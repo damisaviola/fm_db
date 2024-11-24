@@ -42,7 +42,7 @@ class Login extends CI_Controller {
 
     public function authenticate() {
     $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-    $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
+
 
     if ($this->form_validation->run() == FALSE) {
         $this->session->set_flashdata('error', validation_errors());
