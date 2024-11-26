@@ -37,7 +37,7 @@ class Register extends CI_Controller {
 
     if ($this->form_validation->run() == FALSE) {
         $this->session->set_flashdata('error', validation_errors());
-        redirect('register'); // Tampilkan kembali form registrasi
+        redirect('register'); 
     } else {
        
         $email = $this->input->post('email');

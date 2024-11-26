@@ -26,7 +26,7 @@ class mail {
             $this->mail->Host = 'smtp.gmail.com';  
             $this->mail->SMTPAuth = true;
             $this->mail->Username = 'damisaviola10@gmail.com';
-            $this->mail->Password = 'lljkbmmqctizesqh'; 
+            $this->mail->Password = ''; 
             $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
             $this->mail->Port = 587; 
 
