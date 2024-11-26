@@ -10,7 +10,6 @@ class mail {
 
     public function __construct()
     {
-        // Memuat PHPMailer dan file exception
         require_once(APPPATH . 'libraries/PHPMailer/src/Exception.php');
         require_once(APPPATH . 'libraries/PHPMailer/src/PHPMailer.php');
         require_once(APPPATH . 'libraries/PHPMailer/src/SMTP.php');

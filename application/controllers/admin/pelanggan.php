@@ -37,6 +37,7 @@ class Pelanggan extends CI_Controller {
         $this->form_validation->set_rules('alamat', 'Alamat', 'required', ['required' => 'Alamat harus diisi.']);
 
         if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
             redirect('admin/input_pelanggan');
         } else {
             $data = [
@@ -67,8 +68,9 @@ class Pelanggan extends CI_Controller {
     }
 
     public function daftar_pelanggan() {
+        $data['pelanggan'] = $this->Pelanggan_model->get_all_pelanggan();
         $this->load->view('admin/pelanggan/header');
-        $this->load->view('admin/pelanggan/pelanggan');
+        $this->load->view('admin/pelanggan/pelanggan', $data);
         $this->load->view('admin/dashboard/menu');
         $this->load->view('admin/pelanggan/footer');
 
