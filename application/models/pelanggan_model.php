@@ -33,9 +33,24 @@ class Pelanggan_model extends CI_Model
         return $this->db->update('pelanggan', $data);
     }
 
-    public function delete_pelanggan($id_pelanggan)
+    public function hapusPelanggan($id)
     {
-        $this->db->where('id_pelanggan', $id_pelanggan);
-        return $this->db->delete('pelanggan');
+        $this->db->where('id_pelanggan', $id);
+        return $this->db->delete('pelanggan'); // 'pelanggan' adalah nama tabel
     }
+
+    public function getById($id)
+{
+    $query = $this->db->get_where('pelanggan', ['id_pelanggan' => $id]);
+    return $query->row_array(); // Mengembalikan array data pelanggan
+}
+
+
+    public function updatePelanggan($id, $data)
+    {
+        $this->db->where('id_pelanggan', $id);
+        return $this->db->update('pelanggan', $data);
+    }
+
+    
 }

@@ -21,6 +21,8 @@
                 </div>
             </div>
         </div>
+        
+        
 
         <section id="table-pelanggan">
             <div class="row match-height">
@@ -43,19 +45,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($pelanggan as $row): ?>
-                                        <tr>
-                                            <td><?php echo $row['nama']; ?></td>
-                                            <td><?php echo $row['nomor_hp']; ?></td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            <td><?php echo $row['alamat']; ?></td>
-                                            <td>
-                                                <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                                <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
+    <?php foreach ($pelanggan as $row): ?>
+        <tr>
+            <td><?php echo $row['nama']; ?></td>
+            <td><?php echo $row['nomor_hp']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['alamat']; ?></td>
+            <td>
+                <a href="<?php echo site_url('admin/pelanggan/edit_pelanggan/' . $row['id_pelanggan']); ?>" class="btn btn-warning btn-sm">Edit</a>
+
+                <a href="#" 
+                   class="btn btn-danger btn-sm btn-hapus" 
+                   data-id="<?php echo $row['id_pelanggan']; ?>" 
+                   data-nama="<?php echo $row['nama']; ?>">
+                   Hapus
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</tbody>
+
                             </table>
                         </div>
                     </div>
@@ -64,3 +73,6 @@
         </section>
     </div>
 </div>
+
+
+

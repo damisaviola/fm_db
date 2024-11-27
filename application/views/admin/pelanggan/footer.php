@@ -14,17 +14,19 @@
     <script src="<?php echo base_url('assets/admin/dist/assets/js/bootstrap.bundle.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/admin/dist/assets/vendors/simple-datatables/simple-datatables.js'); ?>"></script>
     
-    <?php if (uri_string() == 'admin/pelanggan'): ?>
+    <?php if (uri_string() == 'admin/pelanggan' || uri_string() == 'admin/lapangan'): ?>
     <script>
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
     </script>
-    <?php endif; ?>
+<?php endif; ?>
+
     <script src="<?php echo base_url('assets/admin/dist/assets/js/main.js'); ?>"></script>
 
      <!-- Sweey alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        // SweetAlert2 konfirmasi logout
     function confirmLogout(event) {
         event.preventDefault(); 
         Swal.fire({
@@ -43,7 +45,50 @@
         });
     }
 </script>
-    
+
+
+<?php if (uri_string() == 'admin/pelanggan'): ?>
+<script>
+    // SweetAlert2 konfirmasi hapus data pelanggan
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mendapatkan semua tombol dengan kelas btn-hapus
+        const btnHapus = document.querySelectorAll('.btn-hapus');
+
+        // Loop untuk menambahkan event listener pada setiap tombol Hapus
+        btnHapus.forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();  // Mencegah pengiriman form atau aksi default lainnya
+                
+                // Ambil id dan nama pelanggan dari atribut data-id dan data-nama
+                const pelangganId = this.getAttribute('data-id');
+                const pelangganNama = this.getAttribute('data-nama');
+
+                // Tampilkan SweetAlert konfirmasi hapus
+                Swal.fire({
+                    title: 'Apakah Anda yakin?',
+                    text: `Data pelanggan "${pelangganNama}" akan dihapus secara permanen!`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',  // Warna tombol konfirmasi
+                    cancelButtonColor: '#3085d6', // Warna tombol batal
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                       
+                        window.location.href = `<?php echo site_url('admin/pelanggan/hapus/'); ?>${pelangganId}`;
+                    }
+                });
+            });
+        });
+    });
+</script>
+<?php endif; ?>
+
+
+
+
+   
 
 </body>
 </html>
