@@ -69,45 +69,55 @@
 
                                 <!-- Form -->
                                 <form action="<?php echo site_url('admin/lapangan/tambah'); ?>" method="post" enctype="multipart/form-data">
-                                        <div class="row">
-                                            <div class="col-md-12 col-12">
-                                                <div class="form-group">
-                                                    <label for="nama">Nama Lapangan:</label>
-                                                    <input type="text" id="nama" class="form-control" name="nama" 
-                                                        placeholder="Masukkan nama lapangan" value="<?php echo set_value('nama'); ?>">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12 col-12">
-                                                <div class="form-group">
-                                                    <label for="gambar">Gambar:</label>
-                                                    <input type="file" id="gambar" class="form-control" name="gambar" accept="image/*">
-                                                    <small class="text-muted">Format yang diperbolehkan: JPG, PNG, JPEG. Maksimal ukuran: 2MB.</small>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12 col-12">
-                                                <div class="form-group">
-                                                    <label for="jenis">Jenis:</label>
-                                                    <input type="text" id="jenis" class="form-control" name="jenis" 
-                                                        placeholder="Masukkan jenis lapangan" value="<?php echo set_value('jenis'); ?>">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12 col-12">
-                                                <div class="form-group">
-                                                    <label for="deskripsi">Deskripsi:</label>
-                                                    <textarea id="deskripsi" class="form-control" name="deskripsi" 
-                                                            placeholder="Masukkan deskripsi lapangan" rows="4"><?php echo set_value('deskripsi'); ?></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 d-flex justify-content-end">
-                                                <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                    <div class="row">
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label for="nama">Nama Lapangan:</label>
+                                                <input type="text" id="nama" class="form-control" name="nama" 
+                                                    placeholder="Masukkan nama lapangan" value="<?php echo set_value('nama'); ?>">
                                             </div>
                                         </div>
-                                    </form>
+
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label for="gambar">Gambar:</label>
+                                                <input type="file" id="gambar" class="form-control" name="gambar" accept="image/*">
+                                                <small class="text-muted">Format yang diperbolehkan: JPG, PNG, JPEG. Maksimal ukuran: 2MB.</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label for="jenis">Jenis:</label>
+                                                <input type="text" id="jenis" class="form-control" name="jenis" 
+                                                    placeholder="Masukkan jenis lapangan" value="<?php echo set_value('jenis'); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label for="harga">Harga:</label>
+                                                <input type="number" id="harga" class="form-control" name="harga" 
+                                                    placeholder="Masukkan harga lapangan" value="<?php echo set_value('harga'); ?>" min="0">
+                                                <small class="text-muted">Masukkan harga dalam format angka.</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label for="deskripsi">Deskripsi:</label>
+                                                <textarea id="deskripsi" class="form-control" name="deskripsi" 
+                                                        placeholder="Masukkan deskripsi lapangan" rows="4"><?php echo set_value('deskripsi'); ?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>

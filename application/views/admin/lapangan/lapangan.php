@@ -37,6 +37,7 @@
         <tr>
             <th>Nama Lapangan</th>
             <th>Jenis</th>
+            <th>Harga</th>
             <th>Deskripsi</th>
             <th>Gambar</th>
             <th>Aksi</th>
@@ -47,6 +48,7 @@
         <tr>
             <td><?php echo $row['nama']; ?></td>
             <td><?php echo $row['jenis']; ?></td>
+            <td><?php echo $row['harga']; ?></td>
             <td><?php echo $row['deskripsi']; ?></td>
             <td>
                 <?php if ($row['gambar']): ?>
@@ -56,7 +58,7 @@
                 <?php endif; ?>
             </td>
             <td>
-                <a href="<?php echo site_url('admin/lapangan/edit_lapangan/' . $row['id_lapangan']); ?>" 
+                <a href="<?php echo site_url('admin/edit_lapangan/' . $row['id_lapangan']); ?>" 
                    class="btn btn-warning btn-sm">Edit</a>
 
                 <button 

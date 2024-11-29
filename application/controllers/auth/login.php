@@ -37,9 +37,6 @@ class Login extends CI_Controller {
         $this->load->view('auth/forgot');
     }
 
-
-
-
     public function authenticate() {
     $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 
@@ -66,7 +63,7 @@ class Login extends CI_Controller {
                 $cookie_data = array(
                     'name'   => 'remember_me',
                     'value'  => json_encode(['email' => $email, 'password' => $password]),
-                    'expire' => 300, // 5 menit
+                    'expire' => 300, 
                     'secure' => TRUE 
                 );
                 $this->input->set_cookie($cookie_data);

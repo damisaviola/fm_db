@@ -17,15 +17,15 @@ class mail {
         $this->mail = new PHPMailer(true);
     }
 
-    public function send($to, $subject, $message, $from_email = 'damisaviola10@gmail.com', $from_name = 'Website Name')
+    public function send($to, $subject, $message, $from_email = '', $from_name = 'Website Name')
     {
         try {
             
             $this->mail->isSMTP();
             $this->mail->Host = 'smtp.gmail.com';  
             $this->mail->SMTPAuth = true;
-            $this->mail->Username = 'damisaviola10@gmail.com';
-            $this->mail->Password = 'lljkbmmqctizesqh'; 
+            $this->mail->Username = '';
+            $this->mail->Password = ''; 
             $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
             $this->mail->Port = 587; 
 

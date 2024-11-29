@@ -60,6 +60,11 @@ $route['lupa-password'] = 'auth/forgot';
 $route['login/identify'] = 'auth/login/forget';
 $route['register'] = 'auth/register';
 
+// lapangan
+$route['admin/input_lapangan'] = 'admin/lapangan/input_lapangan';
+$route['admin/edit_lapangan/(:num)'] = 'admin/lapangan/edit_lapangan/$1';
+
+
 // error routes
 $route['auth/forgot'] = 'auth/forbidden';
 $route['auth/login'] = 'auth/forbidden';

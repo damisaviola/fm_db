@@ -102,10 +102,9 @@ class Pelanggan extends CI_Controller {
 
     public function edit_pelanggan($id)
 {
-    // Pastikan model sudah dimuat
+   
     $this->load->model('Pelanggan_model');
 
-    // Validasi ID, pastikan ID valid
     if (!is_numeric($id) || $id <= 0) {
         $this->session->set_flashdata('error', 'ID pelanggan tidak valid.');
         redirect('admin/pelanggan');
@@ -116,7 +115,6 @@ class Pelanggan extends CI_Controller {
         redirect('admin/pelanggan');
     }
 
-    // Muat tampilan
     $this->load->view('admin/pelanggan/header');
     $this->load->view('admin/pelanggan/edit_pelanggan', $data);
     $this->load->view('admin/dashboard/menu', $data);

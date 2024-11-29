@@ -39,7 +39,8 @@
                 </li>
 
                 <!-- Lapangan -->
-                <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/lapangan' || uri_string() == 'admin/lapangan/input_lapangan') ? 'active' : ''; ?>">
+                <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/lapangan' || uri_string() == 'admin/input_lapangan' || strpos(uri_string(), 'admin/edit_lapangan/') === 0) ? 'active' : ''; ?>">
+
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-collection-fill"></i>
                         <span>Lapangan</span>
@@ -48,8 +49,8 @@
                         <li class="submenu-item <?php echo (uri_string() == 'admin/lapangan') ? 'active' : ''; ?>">
                             <a href="<?php echo site_url('admin/lapangan'); ?>">Daftar Lapangan</a>
                         </li>
-                        <li class="submenu-item <?php echo (uri_string() == 'admin/lapangan/input_lapangan') ? 'active' : ''; ?>">
-                            <a href="<?php echo site_url('admin/lapangan/input_lapangan'); ?>">Input Lapangan</a>
+                        <li class="submenu-item <?php echo (uri_string() == 'admin/input_lapangan') ? 'active' : ''; ?>">
+                            <a href="<?php echo site_url('admin/input_lapangan'); ?>">Input Lapangan</a>
                         </li>
                     </ul>
                 </li>
