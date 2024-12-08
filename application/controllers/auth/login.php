@@ -75,7 +75,7 @@ class Login extends CI_Controller {
             redirect('login');
         }
     } else {
-        $this->session->set_flashdata('error', 'Email atau password salah.');
+        $this->session->set_flashdata('error', 'Email dan Password anda salah.');
         redirect('login');
     }
 }

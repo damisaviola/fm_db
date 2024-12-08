@@ -27,74 +27,84 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                        <a href="<?php echo site_url('admin/lapangan/export_csv'); ?>" class="btn btn-success mb-3">
+                                <i class="bi bi-file-earmark-arrow-down"></i> Unduh Data Lapangan (CSV)
+                        </a>
                         <?php if ($this->session->flashdata('message')): ?>
                                     <div class="alert alert-success">
                                         <?php echo $this->session->flashdata('message'); ?>
                                     </div>
                                 <?php endif; ?>
                                 <table class="table table-striped" id="table1">
-    <thead>
-        <tr>
-            <th>Nama Lapangan</th>
-            <th>Jenis</th>
-            <th>Harga</th>
-            <th>Deskripsi</th>
-            <th>Gambar</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($lapangan as $row): ?>
-        <tr>
-            <td><?php echo $row['nama']; ?></td>
-            <td><?php echo $row['jenis']; ?></td>
-            <td><?php echo $row['harga']; ?></td>
-            <td><?php echo $row['deskripsi']; ?></td>
-            <td>
-                <?php if ($row['gambar']): ?>
-                    <img src="<?php echo base_url('uploads/lapangan/' . $row['gambar']); ?>" alt="Gambar Lapangan" width="100">
-                <?php else: ?>
-                    <span>Gambar Tidak Tersedia</span>
-                <?php endif; ?>
-            </td>
-            <td>
-                <a href="<?php echo site_url('admin/edit_lapangan/' . $row['id_lapangan']); ?>" 
-                   class="btn btn-warning btn-sm">Edit</a>
+                <thead>
+                    <tr>
+                        <th>Nama Lapangan</th>
+                        <th>Jenis</th>
+                        <th>Harga</th>
+                        <th>Deskripsi</th>
+                        <th>Gambar</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <?php foreach ($lapangan as $row): ?>
+                        <tr>
+                            <td><?php echo $row['nama']; ?></td>
+                            <td><?php echo $row['jenis']; ?></td>
+                            <td><?php echo $row['harga']; ?></td>
+                            <td><?php echo $row['deskripsi']; ?></td>
+                            <td>
+                                <?php if ($row['gambar']): ?>
+                                    <img src="<?php echo base_url('uploads/lapangan/' . $row['gambar']); ?>" alt="Gambar Lapangan" width="100">
+                                <?php else: ?>
+                                    <span>Gambar Tidak Tersedia</span>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <a href="<?php echo site_url('admin/edit_lapangan/' . $row['id_lapangan']); ?>" 
+                                class="btn btn-warning btn-sm" 
+                                title="Edit">
+                                <i class="fas fa-edit"></i>
+                                </a>
 
-                <button 
-                    class="btn btn-danger btn-sm btn-hapus" 
-                    data-id="<?php echo $row['id_lapangan']; ?>" 
-                    data-nama="<?php echo $row['nama']; ?>"
-                    data-gambar="<?php echo $row['gambar']; ?>">
-                    Hapus
-                </button>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-                        </div>
+                                <button 
+                                class="btn btn-danger btn-sm btn-hapus" 
+                                data-id="<?php echo $row['id_lapangan']; ?>" 
+                                data-nama="<?php echo $row['nama']; ?>" 
+                                data-gambar="<?php echo $row['gambar']; ?>" 
+                                data-user-id="<?php echo $user_id; ?>" 
+                                title="Hapus">
+                                <i class="fas fa-trash"></i>
+                            </button>
+
+                        </td>
+
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
-</div>
 
-<?php if ($this->uri->segment(2) == 'lapangan') : ?>
-<script>
+                <?php if ($this->uri->segment(2) == 'lapangan') : ?>
+    <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Menambahkan event listener untuk tombol hapus lapangan
+
         document.querySelectorAll('.btn-hapus').forEach(button => {
             button.addEventListener('click', function () {
-                const id = this.getAttribute('data-id');      // Mendapatkan ID lapangan
-                const nama = this.getAttribute('data-nama');  // Mendapatkan Nama lapangan
-                const gambar = this.getAttribute('data-gambar');  // Mendapatkan gambar lapangan
+                const id = this.getAttribute('data-id');
+                const nama = this.getAttribute('data-nama');
+                const gambar = this.getAttribute('data-gambar');
+                const userId = this.getAttribute('data-user-id');  // Mendapatkan user_id
 
-                // SweetAlert2 konfirmasi penghapusan data lapangan
                 Swal.fire({
                     title: 'Apakah Anda yakin?',
-                    text: `Data lapangan ${nama} beserta gambarnya (${gambar}) akan dihapus secara permanen.`,
+                    text: `Data lapangan "${nama}" beserta gambarnya (${gambar}) akan dihapus secara permanen.`,
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -103,12 +113,13 @@
                     cancelButtonText: 'Batal'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        // Jika konfirmasi di-click, arahkan ke URL penghapusan lapangan
-                        window.location.href = '<?php echo site_url("admin/lapangan/hapus/"); ?>' + id;
+                        // Mengirimkan dua parameter (id_lapangan dan user_id)
+                        window.location.href = '<?= site_url('admin/lapangan/hapus/') ?>' + id + '/' + userId;
                     }
                 });
             });
         });
     });
-</script>
+    </script>
 <?php endif; ?>
+

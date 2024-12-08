@@ -56,8 +56,8 @@
                 </li>
 
                 <!-- Booking -->
-                <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/booking' || uri_string() == 'admin/input_booking') ? 'active' : ''; ?>">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/booking' || uri_string() == 'admin/input_booking' || strpos(uri_string(), 'admin/edit_halaman/')  === 0) ? 'active' : ''; ?>">
+                <a href="#" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>Booking</span>
                     </a>
@@ -70,6 +70,7 @@
                         </li>
                     </ul>
                 </li>
+                 
 
                 <!-- Jadwal -->
                 <li class="sidebar-item <?php echo (uri_string() == 'admin/jadwal') ? 'active' : ''; ?>">
@@ -96,17 +97,27 @@
                 </li>
 
                 <!-- Event -->
-                <li class="sidebar-item <?php echo (uri_string() == 'admin/event') ? 'active' : ''; ?>">
-                    <a href="<?php echo site_url('admin/event'); ?>" class='sidebar-link'>
-                        <i class="bi bi-pen-fill"></i>
-                        <span>Event</span>
-                    </a>
-                </li>
+                <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/tour' || uri_string() == 'admin/tour/input_tour' || strpos(uri_string(), 'admin/edit_tour/') === 0) ? 'active' : ''; ?>">
+                        <a href="#" class="sidebar-link">
+                            <i class="bi bi-grid-1x2-fill"></i>
+                            <span>Tour</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item 
+                                <?php echo (uri_string() == 'admin/tour') ? 'active' : ''; ?>">
+                                <a href="<?php echo site_url('admin/tour'); ?>">Daftar Tour</a>
+                            </li>
+                            <li class="submenu-item 
+                                <?php echo (uri_string() == 'admin/tour/input_tour') ? 'active' : ''; ?>">
+                                <a href="<?php echo site_url('admin/tour/input_tour'); ?>">Input Tour</a>
+                            </li>
+                        </ul>
+                    </li>
 
                 <li class="sidebar-title">Pengaturan</li>
-
                 <!-- Akun -->
-                <li class="sidebar-item <?php echo (uri_string() == 'admin/akun') ? 'active' : ''; ?>">
+                <li class="sidebar-item <?php echo (uri_string() == 'admin/akun' || uri_string() == 'admin/edit_tour/') ? 'active' : ''; ?>">
+
                     <a href="<?php echo site_url('admin/akun'); ?>" class='sidebar-link'>
                         <i class="bi bi-pentagon-fill"></i>
                         <span>Akun</span>

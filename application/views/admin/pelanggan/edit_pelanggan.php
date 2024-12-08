@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/admin/dist/assets/css/app.css'); ?>">
     <style>
         .form-group {
-            margin-bottom: 1.5rem; /* Menambahkan gap antar elemen form */
+            margin-bottom: 1.5rem; 
         }
 
         .btn {
-            margin-top: 1rem; /* Memberi jarak antara tombol dan input terakhir */
+            margin-top: 1rem; 
         }
     </style>
 </head>

@@ -65,6 +65,11 @@ $route['admin/input_lapangan'] = 'admin/lapangan/input_lapangan';
 $route['admin/edit_lapangan/(:num)'] = 'admin/lapangan/edit_lapangan/$1';
 
 
+//booking
+$route['admin/input_booking'] = 'admin/booking/input_booking';
+$route['admin/edit_halaman/(:num)'] = 'admin/booking/edit_halaman/$1';
+
+
 // error routes
 $route['auth/forgot'] = 'auth/forbidden';
 $route['auth/login'] = 'auth/forbidden';
@@ -75,3 +80,9 @@ $route['404_override'] = 'errors';
 $route['admin/input_pelanggan'] = 'admin/pelanggan/input_pelanggan';
 $route['admin/pelanggan'] = 'admin/pelanggan/daftar_pelanggan';
 $route['translate_uri_dashes'] = FALSE;
+
+
+
+//tour 
+
+$route['admin/edit_tour/(:num)'] = 'admin/tour/edit_tour/$1';

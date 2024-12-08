@@ -8,6 +8,11 @@ class Admin extends CI_Controller {
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->model('User_model');
+        $user_id = $this->session->userdata('user_id');
+        if (!$user_id) {
+            $this->session->set_flashdata('error', 'Silakan login terlebih dahulu.');
+            redirect('login');
+        }
     }
 
     public function index() {

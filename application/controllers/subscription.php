@@ -20,9 +20,7 @@ class Subscription extends CI_Controller {
         Config::$is3ds = true;
     }
 
-    /**
-     * Halaman utama langganan
-     */
+  
     public function index() {
         $user_id = $this->session->userdata('user_id');
 
@@ -33,22 +31,18 @@ class Subscription extends CI_Controller {
         $subscription = $this->Subscription_model->get_active_subscription($user_id);
 
         if ($subscription) {
-            redirect('dashboard'); // Jika sudah berlangganan, arahkan ke dashboard
+            redirect('dashboard'); 
         } else {
-            redirect('subscription/choose_plan'); // Jika belum berlangganan, arahkan ke pilih plan
+            redirect('subscription/choose_plan'); 
         }
     }
 
-    /**
-     * Menampilkan pilihan plan langganan
-     */
+  
     public function choose_plan() {
-        $this->load->view('subscription/choose_plan'); // View untuk menampilkan pilihan plan
+        $this->load->view('subscription/choose_plan'); 
     }
 
-    /**
-     * Memproses langganan yang dipilih dan mengarahkan ke Midtrans untuk pembayaran
-     */
+ 
     public function process_plan() {
         $user_id = $this->session->userdata('user_id');
 
@@ -64,7 +58,7 @@ class Subscription extends CI_Controller {
             redirect('subscription/choose_plan');
         }
 
-        // Data langganan
+    
         $subscription_data = [
             'user_id' => $user_id,
             'plan' => $plan,

@@ -51,26 +51,26 @@
 <script>
     // SweetAlert2 konfirmasi hapus data pelanggan
     document.addEventListener('DOMContentLoaded', function () {
-        // Mendapatkan semua tombol dengan kelas btn-hapus
+     
         const btnHapus = document.querySelectorAll('.btn-hapus');
 
-        // Loop untuk menambahkan event listener pada setiap tombol Hapus
+       
         btnHapus.forEach(function (button) {
             button.addEventListener('click', function (event) {
-                event.preventDefault();  // Mencegah pengiriman form atau aksi default lainnya
+                event.preventDefault();  
                 
-                // Ambil id dan nama pelanggan dari atribut data-id dan data-nama
+               
                 const pelangganId = this.getAttribute('data-id');
                 const pelangganNama = this.getAttribute('data-nama');
 
-                // Tampilkan SweetAlert konfirmasi hapus
+              
                 Swal.fire({
                     title: 'Apakah Anda yakin?',
                     text: `Data pelanggan "${pelangganNama}" akan dihapus secara permanen!`,
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#d33',  // Warna tombol konfirmasi
-                    cancelButtonColor: '#3085d6', // Warna tombol batal
+                    confirmButtonColor: '#d33', 
+                    cancelButtonColor: '#3085d6',
                     confirmButtonText: 'Ya, Hapus!',
                     cancelButtonText: 'Batal'
                 }).then((result) => {

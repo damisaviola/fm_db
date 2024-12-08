@@ -29,6 +29,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                        <a href="<?php echo site_url('admin/pelanggan/export_csv'); ?>" class="btn btn-success mb-3">
+                                <i class="bi bi-file-earmark-arrow-down"></i> Unduh Data Pelanggan (CSV)
+                        </a>
                         <?php if ($this->session->flashdata('message')): ?>
                                     <div class="alert alert-success">
                                         <?php echo $this->session->flashdata('message'); ?>
@@ -52,15 +55,24 @@
             <td><?php echo $row['email']; ?></td>
             <td><?php echo $row['alamat']; ?></td>
             <td>
-                <a href="<?php echo site_url('admin/pelanggan/edit_pelanggan/' . $row['id_pelanggan']); ?>" class="btn btn-warning btn-sm">Edit</a>
+    <a href="<?php echo site_url('admin/pelanggan/edit_pelanggan/' . $row['id_pelanggan']); ?>" 
+       class="btn btn-warning btn-sm" 
+       title="Edit">
+       <i class="fas fa-edit"></i> <!-- Ikon Edit -->
+    </a>
 
-                <a href="#" 
-                   class="btn btn-danger btn-sm btn-hapus" 
-                   data-id="<?php echo $row['id_pelanggan']; ?>" 
-                   data-nama="<?php echo $row['nama']; ?>">
-                   Hapus
-                </a>
-            </td>
+    <a href="#" 
+       class="btn btn-danger btn-sm btn-hapus" 
+       data-id="<?php echo $row['id_pelanggan']; ?>" 
+       data-nama="<?php echo $row['nama']; ?>" 
+       title="Hapus">
+       <i class="fas fa-trash"></i> <!-- Ikon Hapus -->
+    </a>
+</td>
+
+
+
+
         </tr>
     <?php endforeach; ?>
 </tbody>

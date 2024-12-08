@@ -15,14 +15,59 @@ class Lapangan extends CI_Controller {
     }
 
     public function index() {
-        $data['lapangan'] = $this->Lapangan_model->get_all();
-            $this->load->view('admin/pelanggan/header');
-            $this->load->view('admin/lapangan/lapangan', $data);
-            $this->load->view('admin/dashboard/menu');
-            $this->load->view('admin/pelanggan/footer');
-
-       
+        $user_id = $this->session->userdata('user_id'); 
+        if (!$user_id) {
+            redirect('login'); 
+        }
+    
+    
+        $this->load->model('Lapangan_model');
+        $user_id = $this->session->userdata('user_id');  // Misalnya user_id diambil dari session
+        $data['user_id'] = $user_id;    
+        $data['lapangan'] = $this->Lapangan_model->get_all($user_id);
+        $this->load->view('admin/pelanggan/header');
+        $this->load->view('admin/lapangan/lapangan', $data);
+        $this->load->view('admin/dashboard/menu');
+        $this->load->view('admin/pelanggan/footer');
     }
+
+
+    public function export_csv()
+{
+
+    $user_id = $this->session->userdata('user_id'); 
+
+    $this->load->model('Lapangan_model');
+    $data_lapangan = $this->Lapangan_model->get_all_lapangan($user_id);
+    $filename = 'data_lapangan_' . date('Ymd') . '.csv';
+
+    header("Content-Type: text/csv");
+    header("Content-Disposition: attachment; filename={$filename}");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+
+    $file = fopen('php://output', 'w');
+
+
+    $header = ['User ID', 'ID Lapangan', 'Nama Lapangan', 'Harga', 'deskripsi'];
+    fputcsv($file, $header);
+
+    foreach ($data_lapangan as $row) {
+        $csv_row = [
+            'user_id' => $user_id, 
+            'id_lapangan' => $row['id_lapangan'],
+            'nama' => $row['nama'],
+            'harga' => $row['harga'],
+            'deskripsi' => $row['deskripsi']
+        ];
+        fputcsv($file, $csv_row);
+    }
+
+    fclose($file);
+    exit();
+}
+
+    
 
     public function input_lapangan() { 
         $this->load->view('admin/pelanggan/header');
@@ -67,9 +112,12 @@ class Lapangan extends CI_Controller {
                 'jenis'     => $this->input->post('jenis', TRUE),
                 'deskripsi' => $this->input->post('deskripsi', TRUE),
                 'gambar'    => $file_data['file_name'],
-                'harga'     => $this->input->post('harga', TRUE)
+                'harga'     => $this->input->post('harga', TRUE),
+                'user_id'   => $this->session->userdata('user_id'),
             ];                
 
+
+           
            
             if ($this->Lapangan_model->insertLapangan($data)) {
                 $this->session->set_flashdata('message', 'Data berhasil disimpan!');
@@ -83,37 +131,46 @@ class Lapangan extends CI_Controller {
 }
 
 
-    public function hapus($id_lapangan)
+public function hapus($id_lapangan, $user_id)
 {
-    $lapangan = $this->Lapangan_model->getLapanganById($id_lapangan);
+    $lapangan = $this->Lapangan_model->getLapanganByIdAndUserId($id_lapangan, $user_id);
 
     if ($lapangan) {
-        $gambarPath = FCPATH . 'uploads/lapangan/' . $lapangan->gambar; 
+        $gambarPath = FCPATH . 'uploads/lapangan/' . $lapangan->gambar;
         if (file_exists($gambarPath)) {
-            unlink($gambarPath); 
+            unlink($gambarPath);
         }
-        $this->Lapangan_model->hapusLapangan($id_lapangan);
+        $this->Lapangan_model->hapusLapangan($id_lapangan, $user_id);
         $this->session->set_flashdata('message', 'Data lapangan berhasil dihapus!');
     } else {
-        $this->session->set_flashdata('error', 'Data lapangan tidak ditemukan!');
+        $this->session->set_flashdata('error', 'Data lapangan tidak ditemukan atau tidak sesuai dengan user_id!');
     }
+
     redirect('admin/lapangan');
 }
 
 
+
+
+
+
 public function edit_lapangan($id_lapangan) {
-    $lapangan = $this->Lapangan_model->getLapanganById($id_lapangan);
+    $user_id = $this->session->userdata('user_id');
+    if (!$user_id) {
+        $this->session->set_flashdata('error', 'Anda harus login terlebih dahulu!');
+        redirect('admin/login');
+    }
+    $this->load->model('Lapangan_model');
+    $lapangan = $this->Lapangan_model->getLapanganById($id_lapangan, $user_id);
     if (!$lapangan) {
-        $this->session->set_flashdata('error', 'Data lapangan tidak ditemukan!');
+        $this->session->set_flashdata('error', 'Data lapangan tidak ditemukan atau tidak memiliki izin akses!');
         redirect('admin/lapangan');
     }
-
     $data['lapangan'] = $lapangan;
     $this->load->view('admin/pelanggan/header');
     $this->load->view('admin/lapangan/edit_lapangan', $data);
     $this->load->view('admin/dashboard/menu');
     $this->load->view('admin/pelanggan/footer');
- 
 }
 
 
@@ -125,6 +182,8 @@ public function update($id_lapangan) {
 
     if ($this->form_validation->run() == FALSE) {
         $this->edit_lapangan($id_lapangan);
+        $this->session->set_flashdata('error', 'Semua data harus diisi!');
+        redirect('admin/edit_lapangan/' . $id_lapangan);
     } else {
         $config['upload_path']   = './uploads/lapangan/';
         $config['allowed_types'] = 'jpg|jpeg|png';
@@ -141,20 +200,20 @@ public function update($id_lapangan) {
         if (!empty($_FILES['gambar']['name'])) {
             if ($this->upload->do_upload('gambar')) {
                 $file_data = $this->upload->data();
-
-                $lapangan = $this->Lapangan_model->getLapanganById($id_lapangan);
-                if (file_exists('./uploads/lapangan/' . $lapangan->gambar)) {
+                $lapangan = $this->Lapangan_model->getLapanganById($id_lapangan, $this->session->userdata('user_id'));
+                if (file_exists('./uploads/lapangan/' . $lapangan->gambar)) { 
                     unlink('./uploads/lapangan/' . $lapangan->gambar);
                 }
-
                 $data['gambar'] = $file_data['file_name'];
             } else {
                 $this->session->set_flashdata('error', 'Gagal mengunggah gambar: ' . $this->upload->display_errors());
-                redirect('admin/lapangan/edit_lapangan/' . $id_lapangan);
+                redirect('admin/edit_lapangan' . $id_lapangan);
             }
         }
+        
 
-        if ($this->Lapangan_model->updateLapangan($id_lapangan, $data)) {
+        $user_id = $this->session->userdata('user_id');
+        if ($this->Lapangan_model->updateLapangan($id_lapangan, $user_id, $data)) {
             $this->session->set_flashdata('message', 'Data berhasil diperbarui!');
         } else {
             $this->session->set_flashdata('error', 'Gagal memperbarui data!');
@@ -162,4 +221,5 @@ public function update($id_lapangan) {
         redirect('admin/lapangan');
     }
 }
+
 }
