@@ -72,9 +72,12 @@
         </nav>
 
         <div class="s-header__cta">
+    <?php if (!$this->session->userdata('is_logged_in')): ?>  <!-- Cek apakah pengguna belum login -->
         <a href="<?php echo site_url('login'); ?>" class="btn btn--stroke s-header__cta-btn">Masuk</a>
-        <a href="<?php echo site_url('register'); ?>" class="btn btn--stroke s-header__cta-btn" style="margin-left: 10px;">daftar</a> <!-- Tombol tambahan -->
-        </div>
+        <a href="<?php echo site_url('register'); ?>" class="btn btn--stroke s-header__cta-btn" style="margin-left: 10px;">Daftar</a>
+    <?php endif; ?>  <!-- Tombol hanya muncul jika pengguna belum login -->
+</div>
+
 
     </div> <!-- end s-header__inner -->
 
@@ -513,7 +516,7 @@
                                             <li>Backup & Restore</li>
                                         </ul>
                 
-                                        <a class="btn btn--primary u-fullwidth" href="#0">Get Started</a>
+                                        <a class="btn btn--primary u-fullwidth" href="<?= base_url('plans/detail/elite') ?>">Get Started</a>
                                     </div>
                                 
                                 </div>
@@ -534,8 +537,8 @@
                                             <li><span>Futsal Court </span>  Management</li>
                                             <li>Backup & Restore</li>
                                         </ul>
-                
-                                        <a class="btn btn--primary u-fullwidth" href="#0">Get Started</a>
+                                        <a class="btn btn--primary u-fullwidth" href="<?= base_url('plans/detail/pro') ?>">Get Started</a>
+                              
                                     </div>  
                                 
                                 </div>

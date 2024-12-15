@@ -12,15 +12,34 @@ class Booking extends CI_Controller
         $this->load->model('Pelanggan_model');
         $this->load->model('Lapangan_model');
         $this->load->helper('pdf_helper');
+        $this->load->model('Subscription_model');
+        $this->load->model('User_model');
 
 
-        if (!$this->session->userdata('user_id')) {
+        if (!$this->session->userdata('is_logged_in')) {
+      
             $this->session->set_flashdata('error', 'Silakan login terlebih dahulu.');
             redirect('login');
-        }
-    }
-
+                }
+                $user_id = $this->session->userdata('user_id');
+                $user = $this->User_model->get_user_by_id($user_id);
+                
+                if (!$user || $user->is_active != '1') {
+                
+                    $this->session->set_flashdata('error', 'Akun Anda belum aktif.');
+                    redirect('login');
+                }
     
+    
+                $subscription = $this->Subscription_model->get_active_subscription($user_id);
+    
+                if (!$subscription) {
+                
+                    $this->session->set_flashdata('error', 'Anda belum melakukan subscribe.');
+                    redirect('home');
+                }
+    
+    }
 
     public function index() {
     $user_id = $this->session->userdata('user_id');
@@ -95,7 +114,8 @@ public function export_csv()
             'jam_awal' => $row['jam_awal'],
             'jam_akhir' => $row['jam_akhir'],
             'status' => ucfirst($row['status']),
-            'total_harga' => 'Rp ' . number_format($row['harga'], 2, ',', '.')
+            'total_harga' => 'Rp ' . number_format($row['harga'], 2, ',', '.'),
+            'tanggal_transaksi' => date('Y-m-d H:i:s')
         ];
         fputcsv($file, $csv_row);
     }
@@ -171,7 +191,7 @@ public function export_csv()
 
 
     public function update_booking($id_booking) {
-        // Validasi form
+        
         $this->form_validation->set_rules('id_pelanggan', 'Pelanggan', 'required');
         $this->form_validation->set_rules('id_lapangan', 'Lapangan', 'required');
         $this->form_validation->set_rules('tanggal_bermain', 'Tanggal Bermain', 'required');
@@ -210,7 +230,7 @@ public function export_csv()
             return;
         }
     
-        // Periksa apakah data waktu dan lapangan diubah
+       
         $is_time_changed = 
             $data['id_lapangan'] != $booking['id_lapangan'] ||
             $data['tgl_bermain'] != $booking['tgl_bermain'] ||
@@ -218,7 +238,6 @@ public function export_csv()
             $data['jam_akhir'] != $booking['jam_akhir'];
     
         if ($is_time_changed) {
-            // Periksa ketersediaan lapangan
             $is_available = $this->Booking_model->check_availability(
                 $data['id_lapangan'],
                 $data['tgl_bermain'],
@@ -234,7 +253,6 @@ public function export_csv()
             }
         }
     
-        // Proses pembaruan data
         if ($this->Booking_model->update_booking_data($id_booking, $user_id, $data)) {
             $this->session->set_flashdata('message', 'Data booking berhasil diperbarui!');
         } else {
@@ -291,5 +309,81 @@ public function hapus_booking($id_booking) {
 }
 
 
+public function pay($id_booking) {
+    $this->load->model('Booking_model');
+
+
+    $data['booking'] = $this->Booking_model->get_booking_with_customer($id_booking);
+
+    if (!$data['booking']) {
+        $this->session->set_flashdata('error', 'Data booking tidak ditemukan.');
+        redirect('admin/booking');
+    }
+
+
+    $this->load->view('admin/booking/header');
+    $this->load->view('admin/dashboard/menu');
+    $this->load->view('admin/booking/payment_detail', $data);
+    $this->load->view('admin/booking/footer');
+}
+
+
+
+public function process_payment() {
+    $id_booking = $this->input->post('id_booking');
+    $payment_method = $this->input->post('payment_method');
+
+
+    $data = [
+        'status' => 'lunas', 
+        'payment_method' => $payment_method
+    ];
+    $this->Booking_model->update_booking($id_booking, $data);
+
+    $this->session->set_flashdata('success', 'Pembayaran berhasil diproses.');
+    redirect('admin/booking');
+}
+
+public function proses_pembayaran() {
+    $this->load->model('Booking_model');
+
+    $id_booking = $this->input->post('id_booking');
+    $id_pelanggan = $this->input->post('id_pelanggan');
+    $total_harga = str_replace(['Rp', '.', ','], '', $this->input->post('total_harga')); // Hilangkan format Rupiah
+    $metode = $this->input->post('metode');
+    $jumlah_bayar = $this->input->post('jumlah_bayar') ?: $total_harga;
+    $kembalian = ($metode == 'tunai') ? $jumlah_bayar - $total_harga : 0;
+
+    // Data Pembayaran
+    $data = [
+        'id_booking'    => $id_booking,
+        'id_pelanggan'  => $id_pelanggan,
+        'total_harga'   => $total_harga,
+        'metode'        => $metode,
+        'jumlah_bayar'  => $jumlah_bayar,
+        'kembalian'     => $kembalian,
+        'user_id'       => $this->session->userdata('user_id'),
+    ];
+
+    // Insert pembayaran
+    if ($this->Booking_model->insert_pembayaran($data)) {
+     
+        $update_status = ['status' => 'Lunas'];
+        $this->Booking_model->update_booking_status($id_booking, $update_status);
+
+        $this->session->set_flashdata('message', 'Pembayaran berhasil diproses dan status booking diperbarui menjadi Lunas!');
+    } else {
+        $this->session->set_flashdata('error', 'Gagal memproses pembayaran!');
+    }
+
+    redirect('admin/booking');
+}
+
+
 
 }
+
+
+
+
+

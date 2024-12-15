@@ -9,11 +9,32 @@ class User_model extends CI_Model {
         $this->load->database();
     }
 
+
+    public function get_user_by_id2($user_id) {
+        return $this->db->get_where('users', ['id' => $user_id])->row();
+    } 
     public function insert_user($data)
     {
         return $this->db->insert('users', $data); 
     }
 
+    public function get_pembayaran($filters = []) {
+        $this->db->select('*');
+        $this->db->from('pembayaran');
+        
+        // Mengaplikasikan filter jika ada
+        if (!empty($filters)) {
+            $this->db->where($filters);
+        }
+    
+        // Menambahkan urutan berdasarkan tanggal transaksi
+        $this->db->order_by('tanggal_transaksi', 'DESC');
+        
+        // Menjalankan query dan mengembalikan hasil
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
  
     public function activate_account($activation_code) {
         $this->db->where('activation_code', $activation_code);

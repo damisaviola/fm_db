@@ -96,6 +96,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item <?php echo (uri_string() == 'admin/transaksi') ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('admin/transaksi'); ?>" class='sidebar-link'>
+                        <i class="bi bi-search"></i>
+                        <span>Riwayat Transaksi</span>
+                    </a>
+                </li>
+
                 <!-- Event -->
                 <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/tour' || uri_string() == 'admin/tour/input_tour' || strpos(uri_string(), 'admin/edit_tour/') === 0) ? 'active' : ''; ?>">
                         <a href="#" class="sidebar-link">

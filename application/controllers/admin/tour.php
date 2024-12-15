@@ -7,12 +7,32 @@ class Tour extends CI_Controller {
         parent::__construct();
         $this->load->model('Tour_model');
         $this->load->library('form_validation');
-        $this->load->model('Booking_model');    
-        $user_id = $this->session->userdata('user_id');
-        if (!$user_id) {
+        $this->load->model('Booking_model'); 
+        $this->load->model('Subscription_model');
+        $this->load->model('User_model');
+           
+        if (!$this->session->userdata('is_logged_in')) {
+      
             $this->session->set_flashdata('error', 'Silakan login terlebih dahulu.');
             redirect('login');
-        }
+                }
+                $user_id = $this->session->userdata('user_id');
+                $user = $this->User_model->get_user_by_id($user_id);
+                
+                if (!$user || $user->is_active != '1') {
+                
+                    $this->session->set_flashdata('error', 'Akun Anda belum aktif.');
+                    redirect('login');
+                }
+    
+    
+                $subscription = $this->Subscription_model->get_active_subscription($user_id);
+    
+                if (!$subscription) {
+                
+                    $this->session->set_flashdata('error', 'Anda belum melakukan subscribe.');
+                    redirect('home');
+                }
     }
 
     public function index() {
@@ -178,6 +198,23 @@ public function update($id_tour)
         redirect('admin/tour');
     }
 
+}
+
+public function hapus($id_tour) {
+
+    $user_id = $this->session->userdata('user_id');
+    if (!$user_id) {
+        $this->session->set_flashdata('error', 'Anda harus login terlebih dahulu!');
+        redirect('login'); 
+    }
+
+    if ($this->Tour_model->delete_tour($id_tour, $user_id)) {
+        $this->session->set_flashdata('message', 'Tour berhasil dihapus.');
+    } else {
+        $this->session->set_flashdata('error', 'Gagal menghapus data Tour.');
+    }
+
+    redirect('admin/tour');
 }
 }
 

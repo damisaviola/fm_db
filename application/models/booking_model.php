@@ -14,12 +14,58 @@ class Booking_model extends CI_Model
         return $this->db->insert('booking', $data);
     }
 
+    public function insert_pembayaran($data) {
+        return $this->db->insert('pembayaran', $data);
+    }
+
+    public function get_pembayaran($filters = [], $user_id = null) {
+        $this->db->select('*');
+        $this->db->from('pembayaran');
+    
+        // Filter berdasarkan id_user
+        if (!is_null($user_id)) {
+            $this->db->where('user_id', $user_id);
+        }
+    
+        // Mengaplikasikan filter tambahan (misalnya tanggal)
+        if (!empty($filters)) {
+            $this->db->where($filters);
+        }
+    
+        $this->db->order_by('tanggal_transaksi', 'DESC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
+    
+    
+
     public function delete_booking($id_booking, $user_id) {
         $this->db->where('id_booking', $id_booking);
         $this->db->where('user_id', $user_id);
         $result = $this->db->delete('booking');
         return $result; 
     }
+
+    public function update_booking_status($id_booking, $data) {
+        $this->db->where('id_booking', $id_booking);
+        return $this->db->update('booking', $data); // Update status di tabel booking
+    }
+
+
+    public function get_booking_by_id($id_booking) {
+        return $this->db->get_where('booking', ['id_booking' => $id_booking])->row_array();
+    }
+
+    public function get_booking_with_customer($id_booking) {
+        $this->db->select('b.*, p.nama, l.nama'); // Ambil data booking, nama pelanggan, dan lapangan
+        $this->db->from('booking b');
+        $this->db->join('pelanggan p', 'b.id_pelanggan = p.id_pelanggan', 'left'); // Join tabel pelanggan
+        $this->db->join('lapangan l', 'b.id_lapangan = l.id_lapangan', 'left');   // Join tabel lapangan
+        $this->db->where('b.id_booking', $id_booking);
+        return $this->db->get()->row_array();
+    }
+    
     
 
     public function get_all_bookings($user_id)

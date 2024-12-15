@@ -7,6 +7,9 @@ class Tour_model extends CI_Model {
         parent::__construct();
     }
 
+
+    
+
     public function get_tours_by_user($user_id)
     {
         $this->db->where('user_id', $user_id);
@@ -20,10 +23,9 @@ class Tour_model extends CI_Model {
 
     public function get_all_tour($user_id)
 {
-    // Ambil data tour yang terkait dengan user_id
     $this->db->select('*');
     $this->db->from('tour');
-    $this->db->where('user_id', $user_id);  // Filter berdasarkan user_id
+    $this->db->where('user_id', $user_id);  
     return $this->db->get()->result_array();
 }
 
@@ -40,6 +42,8 @@ class Tour_model extends CI_Model {
         $this->db->where('user_id', $user_id);
         return $this->db->delete('tour');
     }
+
+    
 
     public function add_tour($data)
     {

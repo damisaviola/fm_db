@@ -5,14 +5,36 @@ class Lapangan extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
-        if (!$this->session->userdata('is_logged_in')) {
-            $this->session->set_flashdata('error', 'Silakan login terlebih dahulu.');
-            redirect('login'); 
-        }
         $this->load->model('Lapangan_model');
         $this->load->library('form_validation');
+        $this->load->model('Subscription_model');
+        $this->load->model('User_model');
+
+        if (!$this->session->userdata('is_logged_in')) {
+      
+            $this->session->set_flashdata('error', 'Silakan login terlebih dahulu.');
+            redirect('login');
+                }
+                $user_id = $this->session->userdata('user_id');
+                $user = $this->User_model->get_user_by_id($user_id);
+                
+                if (!$user || $user->is_active != '1') {
+                
+                    $this->session->set_flashdata('error', 'Akun Anda belum aktif.');
+                    redirect('login');
+                }
+    
+    
+                $subscription = $this->Subscription_model->get_active_subscription($user_id);
+    
+                if (!$subscription) {
+                
+                    $this->session->set_flashdata('error', 'Anda belum melakukan subscribe.');
+                    redirect('home');
+                }
     }
+
+    
 
     public function index() {
         $user_id = $this->session->userdata('user_id'); 
