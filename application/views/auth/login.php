@@ -79,7 +79,7 @@
                     <!-- Links -->
                     <div class="text-center mt-5 text-lg fs-4">
                         <p class="text-gray-600">Belum mempunyai akun? <a class="font-bold" href="<?php echo site_url('register'); ?>">Daftar</a>.</p>
-                        <p><a class="font-bold" href="<?php echo site_url('login/identify'); ?>">Lupa Password</a>.</p>
+                        <p><a class="font-bold" href="<?php echo site_url('lupa-password'); ?>">Lupa Password</a>.</p>
                     </div>
                 </div>
             </div>

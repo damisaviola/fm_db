@@ -44,13 +44,13 @@ class Lapangan extends CI_Controller {
     
     
         $this->load->model('Lapangan_model');
-        $user_id = $this->session->userdata('user_id');  // Misalnya user_id diambil dari session
+        $user_id = $this->session->userdata('user_id');  
         $data['user_id'] = $user_id;    
         $data['lapangan'] = $this->Lapangan_model->get_all($user_id);
-        $this->load->view('admin/pelanggan/header');
+        $this->load->view('admin/lapangan/header');
         $this->load->view('admin/lapangan/lapangan', $data);
         $this->load->view('admin/dashboard/menu');
-        $this->load->view('admin/pelanggan/footer');
+        $this->load->view('admin/lapangan/footer');
     }
 
 

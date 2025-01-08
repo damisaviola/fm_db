@@ -56,13 +56,14 @@
                 </li>
 
                 <!-- Booking -->
-                <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/booking' || uri_string() == 'admin/input_booking' || strpos(uri_string(), 'admin/edit_halaman/')  === 0) ? 'active' : ''; ?>">
+                <li class="sidebar-item has-sub <?php echo ( uri_string() === 'admin/booking' || strpos(uri_string(), 'admin/booking/pay/') === 0 || uri_string() === 'admin/input_booking' || strpos(uri_string(), 'admin/edit_halaman/') === 0) ? 'active' : ''; ?>">
+
                 <a href="#" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>Booking</span>
                     </a>
                     <ul class="submenu">
-                        <li class="submenu-item <?php echo (uri_string() == 'admin/booking') ? 'active' : ''; ?>">
+                        <li class="submenu-item <?php echo (uri_string() == 'admin/booking' || strpos(uri_string(), 'admin/booking/pay/') === 0 ) ? 'active' : ''; ?>">
                             <a href="<?php echo site_url('admin/booking'); ?>">Daftar Booking</a>
                         </li>
                         <li class="submenu-item <?php echo (uri_string() == 'admin/input_booking') ? 'active' : ''; ?>">
@@ -85,14 +86,6 @@
                     <a href="<?php echo site_url('admin/laporan'); ?>" class='sidebar-link'>
                         <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                         <span>Laporan</span>
-                    </a>
-                </li>
-
-                <!-- Cek Kode Booking -->
-                <li class="sidebar-item <?php echo (uri_string() == 'admin/cek_kode_booking') ? 'active' : ''; ?>">
-                    <a href="<?php echo site_url('admin/cek_kode_booking'); ?>" class='sidebar-link'>
-                        <i class="bi bi-search"></i>
-                        <span>Cek Kode Booking</span>
                     </a>
                 </li>
 
@@ -122,14 +115,6 @@
                     </li>
 
                 <li class="sidebar-title">Pengaturan</li>
-                <!-- Akun -->
-                <li class="sidebar-item <?php echo (uri_string() == 'admin/akun' || uri_string() == 'admin/edit_tour/') ? 'active' : ''; ?>">
-
-                    <a href="<?php echo site_url('admin/akun'); ?>" class='sidebar-link'>
-                        <i class="bi bi-pentagon-fill"></i>
-                        <span>Akun</span>
-                    </a>
-                </li>
 
                 <!-- Keluar -->
                 <li class="sidebar-item">

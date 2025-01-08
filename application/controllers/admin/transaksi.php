@@ -11,13 +11,36 @@ class Transaksi extends CI_Controller {
         $this->load->library('session');
         $this->load->model('Transaksi_model');
         $this->load->helper('pdf_helper');
-        $id_user = $this->session->userdata('user_id');
+        $this->load->model('Subscription_model');
+        $this->load->model('User_model');
+
     
-    if (!$id_user) {
-        redirect('login');
+        if (!$this->session->userdata('is_logged_in')) {
+      
+            $this->session->set_flashdata('error', 'Silakan login terlebih dahulu.');
+            redirect('login');
+                }
+                $user_id = $this->session->userdata('user_id');
+                $user = $this->User_model->get_user_by_id($user_id);
+                
+                if (!$user || $user->is_active != '1') {
+                
+                    $this->session->set_flashdata('error', 'Akun Anda belum aktif.');
+                    redirect('login');
+                }
+    
+    
+                $subscription = $this->Subscription_model->get_active_subscription($user_id);
+    
+                if (!$subscription) {
+                
+                    $this->session->set_flashdata('error', 'Anda belum melakukan subscribe.');
+                    redirect('home');
+                }
     }
     
-    }
+    
+
 
     public function index() {
         $id_user = $this->session->userdata('user_id');

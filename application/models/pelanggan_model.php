@@ -64,4 +64,17 @@ class Pelanggan_model extends CI_Model
         return $this->db->update('pelanggan', $data);
     }
 
+    public function get_recent_customers($user_id) {
+        $this->db->select('nama, email'); 
+        $this->db->from('pelanggan');
+        $this->db->where('user_id', $user_id); 
+        $this->db->limit(3); 
+        return $this->db->get()->result_array();
+    }
+
+    public function get_total_customers_by_user($user_id) {
+        $this->db->where('user_id', $user_id);
+        return $this->db->count_all_results('pelanggan'); 
+    }
+
 }

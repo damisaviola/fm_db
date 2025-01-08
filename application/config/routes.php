@@ -73,6 +73,8 @@ $route['admin/edit_halaman/(:num)'] = 'admin/booking/edit_halaman/$1';
 // error routes
 $route['auth/forgot'] = 'auth/forbidden';
 $route['auth/login'] = 'auth/forbidden';
+$route['admin/akun'] = 'errors/error_500';
+$route['admin/cek_kode_booking'] = 'errors/error_500';
 $route['404_override'] = 'errors';
 
 
@@ -86,3 +88,9 @@ $route['translate_uri_dashes'] = FALSE;
 //tour 
 
 $route['admin/edit_tour/(:num)'] = 'admin/tour/edit_tour/$1';
+
+
+
+// pembayaran 
+$route['admin/booking/pay/(:num)'] = 'admin/booking/pay/$1';
+

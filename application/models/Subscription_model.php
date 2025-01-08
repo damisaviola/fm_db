@@ -25,9 +25,23 @@ class Subscription_model extends CI_Model {
 
     public function get_active_subscription($user_id) {
         $this->db->where('user_id', $user_id);
-        $this->db->where('end_date >=', date('Y-m-d H:i:s'));  // Memeriksa apakah subscription masih aktif
-        $query = $this->db->get('subscriptions'); // 'subscriptions' adalah tabel langganan
-        return $query->row(); // Mengembalikan data langganan yang aktif
+        $this->db->where('end_date >=', date('Y-m-d H:i:s'));  
+        $query = $this->db->get('subscriptions'); 
+        return $query->row();
+    }
+
+    public function get_subscription_by_user($user_id)
+    {
+        $this->db->select('start_date, end_date, plan_name');
+        $this->db->from('subscriptions'); 
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            return $query->row_array();
+        } else {
+            return null;
+        }
     }
 
 }

@@ -46,7 +46,7 @@ public function get_all_lapangan($user_id)
         return $this->db->delete('lapangan');
     }
 
-    // Alias untuk menghapus data lapangan (dengan validasi user_id)
+  
     public function hapusLapangan($id_lapangan, $user_id) {
         $this->db->where('id_lapangan', $id_lapangan);
         $this->db->where('user_id', $user_id);
@@ -55,10 +55,35 @@ public function get_all_lapangan($user_id)
 
     public function getLapanganByIdAndUserId($id_lapangan, $user_id)
 {
-    // Mencari lapangan berdasarkan ID dan user_id
+   
     $this->db->where('id_lapangan', $id_lapangan);
     $this->db->where('user_id', $user_id);
-    return $this->db->get('lapangan')->row(); // Mengambil satu hasil
+    return $this->db->get('lapangan')->row(); 
 }
+
+public function get_total_lapangan_by_user($user_id) {
+    $this->db->where('user_id', $user_id);
+    return $this->db->count_all_results('lapangan'); 
+}
+
+
+public function get_lapangan_usage()
+{
+    // Ambil user_id yang sedang login dari session
+    $user_id = $this->session->userdata('user_id');
+    
+    // Query untuk mengambil jumlah pemakaian lapangan berdasarkan user yang login
+    $this->db->select('id_lapangan, COUNT(id_booking) as usage_count');
+    $this->db->from('booking');
+    $this->db->where('user_id', $user_id);  // Filter berdasarkan user yang login
+    $this->db->group_by('id_lapangan');  // Kelompokkan berdasarkan id_lapangan
+    $this->db->order_by('usage_count', 'DESC');  // Urutkan berdasarkan penggunaan terbanyak
+    $query = $this->db->get();
+
+    return $query->result_array();  // Mengembalikan hasil dalam bentuk array
+}
+
+
+
 
 }

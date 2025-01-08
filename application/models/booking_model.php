@@ -135,6 +135,11 @@ public function is_date_available($tanggal_mulai, $tanggal_selesai, $user_id)
         return $this->db->get_where('booking', ['id_booking' => $id_booking])->row_array();
     }
 
+    public function get_total_booking_by_user($user_id) {
+        $this->db->where('user_id', $user_id);
+        return $this->db->count_all_results('booking'); 
+    }
+
 
 
 

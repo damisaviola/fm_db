@@ -39,9 +39,27 @@
 <body>
 <div id="main">
     <div class="page-heading">
-        <div class="page-title">
-            <h3>Detail Booking</h3>
+    <div class="page-title">
+            <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                    <h3>Form Pembayaran</h3>
+                    <p class="text-subtitle text-muted">Halaman untuk Pembayaran Booking</p>
+                </div>
+                <div class="col-12 col-md-6 order-md-2 order-first">
+                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="<?php echo site_url('admin/booking'); ?>">Booking</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                               Pembayaran
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
         </div>
+
 
         <section id="booking-detail">
             <div class="card">

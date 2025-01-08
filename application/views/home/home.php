@@ -279,10 +279,10 @@
                         </div>
                         <div class="column s-about__howto-screens-block">
                             <div class="s-about__howto-screens">
-                                <img src="<?php echo base_url('assets/home/images/screens/screen-01.png'); ?>"
-                                    srcset="<?php echo base_url('assets/home/images/screens/screen-01.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-01@2x.png'); ?> 2x" alt="">
-                                <img src="<?php echo base_url('assets/home/images/screens/screen-04.png'); ?>"
-                                    srcset="<?php echo base_url('assets/home/images/screens/screen-04.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-04@2x.png'); ?> 2x" alt="">
+                                <img src="<?php echo base_url('assets/home/images/screens/rem11.png'); ?>"
+                                    srcset="<?php echo base_url('assets/home/images/screens/rem11.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-01@2x.png'); ?> 2x" alt="">
+                                <img src="<?php echo base_url('assets/home/images/screens/rem11.png'); ?>"
+                                    srcset="<?php echo base_url('assets/home/images/screens/rem11.png'); ?> 1x, <?php echo base_url('assets/home/images/screens/screen-04@2x.png'); ?> 2x" alt="">
                             </div>
                         </div>
 

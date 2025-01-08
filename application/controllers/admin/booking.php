@@ -349,12 +349,11 @@ public function proses_pembayaran() {
 
     $id_booking = $this->input->post('id_booking');
     $id_pelanggan = $this->input->post('id_pelanggan');
-    $total_harga = str_replace(['Rp', '.', ','], '', $this->input->post('total_harga')); // Hilangkan format Rupiah
+    $total_harga = str_replace(['Rp', '.', ','], '', $this->input->post('total_harga'));
     $metode = $this->input->post('metode');
     $jumlah_bayar = $this->input->post('jumlah_bayar') ?: $total_harga;
     $kembalian = ($metode == 'tunai') ? $jumlah_bayar - $total_harga : 0;
 
-    // Data Pembayaran
     $data = [
         'id_booking'    => $id_booking,
         'id_pelanggan'  => $id_pelanggan,
@@ -365,7 +364,6 @@ public function proses_pembayaran() {
         'user_id'       => $this->session->userdata('user_id'),
     ];
 
-    // Insert pembayaran
     if ($this->Booking_model->insert_pembayaran($data)) {
      
         $update_status = ['status' => 'Lunas'];

@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Pembayaran Berhasil</h1>
         <p>Terima kasih telah melakukan pembayaran. Langganan Anda telah aktif.</p>
-        <a href="<?php echo site_url('dashboard'); ?>" class="btn btn-primary">Ke Dashboard</a>
+        <a href="<?php echo site_url('home'); ?>" class="btn btn-primary">Ke Dashboard</a>
     </div>
 </body>
 </html>

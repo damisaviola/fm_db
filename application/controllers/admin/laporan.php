@@ -6,19 +6,38 @@ class laporan extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Booking_model');
+        $this->load->model('Subscription_model');
+        $this->load->model('User_model');
         $this->load->library('session');
+      
         if (!$this->session->userdata('is_logged_in')) {
-            redirect('login'); // Redirect ke halaman login jika belum login
-        }
-        
+      
+            $this->session->set_flashdata('error', 'Silakan login terlebih dahulu.');
+            redirect('login');
+                }
+                $user_id = $this->session->userdata('user_id');
+                $user = $this->User_model->get_user_by_id($user_id);
+                
+                if (!$user || $user->is_active != '1') {
+                
+                    $this->session->set_flashdata('error', 'Akun Anda belum aktif.');
+                    redirect('login');
+                }
+    
+    
+                $subscription = $this->Subscription_model->get_active_subscription($user_id);
+    
+                if (!$subscription) {
+                
+                    $this->session->set_flashdata('error', 'Anda belum melakukan subscribe.');
+                    redirect('home');
+                }
     }
+        
 
     
      public function index() {
-    // Cek ID user dari sesi
     $user_id = $this->session->userdata('user_id');
-
-    // Kode laporan di bawah ini hanya dijalankan setelah debugging selesai
     $start_date = $this->input->get('start_date');
     $end_date = $this->input->get('end_date');
 
@@ -30,11 +49,11 @@ class laporan extends CI_Controller {
         $filters['tanggal_transaksi <='] = $end_date . ' 23:59:59';
     }
 
-    // Ambil data laporan berdasarkan id_user
+   
     $data['pembayaran'] = $this->Booking_model->get_pembayaran($filters, $user_id);
     $data['total_pemasukan'] = array_sum(array_column($data['pembayaran'], 'jumlah_bayar'));
 
-    // Load view laporan
+  
   
     $this->load->view('admin/laporan/header');
     $this->load->view('admin/dashboard/menu');
