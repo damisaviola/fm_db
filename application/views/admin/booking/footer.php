@@ -46,34 +46,30 @@
 
 <?php if (uri_string() == 'admin/booking'): ?>
 <script>
-    // SweetAlert2 konfirmasi hapus data booking
-    document.addEventListener('DOMContentLoaded', function () {
-        // Pilih semua tombol dengan class btn-hapus
-        const btnHapus = document.querySelectorAll('.btn-hapus');
 
-        // Tambahkan event listener ke setiap tombol
+    document.addEventListener('DOMContentLoaded', function () {
+        const btnHapus = document.querySelectorAll('.btn-hapus');
         btnHapus.forEach(function (button) {
             button.addEventListener('click', function (event) {
-                event.preventDefault(); // Mencegah aksi default tombol (navigasi langsung)
+                event.preventDefault(); 
 
-                // Ambil data-id, data-nama, dan user_id dari atribut tombol atau PHP session
+               
                 const bookingId = this.getAttribute('data-id');
                 const pelangganNama = this.getAttribute('data-nama');
                 const userId = "<?php echo $this->session->userdata('user_id'); ?>";
 
-                // Tampilkan SweetAlert2 untuk konfirmasi
+                
                 Swal.fire({
                     title: 'Apakah Anda yakin?',
                     text: `Data booking untuk "${pelangganNama}" akan dihapus secara permanen!`,
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#d33', // Warna tombol konfirmasi
-                    cancelButtonColor: '#3085d6', // Warna tombol batal
+                    confirmButtonColor: '#d33', 
+                    cancelButtonColor: '#3085d6', 
                     confirmButtonText: 'Ya, Hapus!',
                     cancelButtonText: 'Batal'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        // Jika dikonfirmasi, arahkan ke URL hapus dengan id_booking dan user_id
                         window.location.href = `<?php echo site_url('admin/booking/hapus_booking/'); ?>${bookingId}?user_id=${userId}`;
                     }
                 });

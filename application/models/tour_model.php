@@ -6,10 +6,7 @@ class Tour_model extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
-
-
-    
-
+ 
     public function get_tours_by_user($user_id)
     {
         $this->db->where('user_id', $user_id);
@@ -29,21 +26,17 @@ class Tour_model extends CI_Model {
     return $this->db->get()->result_array();
 }
 
-
     public function update_tour($id_tour, $user_id, $data) {
         $this->db->where('id_tour', $id_tour);
         $this->db->where('user_id', $user_id);
         return $this->db->update('tour', $data);
     }
 
-
     public function delete_tour($id_tour, $user_id) {
         $this->db->where('id_tour', $id_tour);
         $this->db->where('user_id', $user_id);
         return $this->db->delete('tour');
     }
-
-    
 
     public function add_tour($data)
     {
@@ -75,7 +68,6 @@ class Tour_model extends CI_Model {
     public function get_tour_by_id($id_tour, $user_id) {
         return $this->db->get_where('tour', ['id_tour' => $id_tour, 'user_id' => $user_id])->row_array();
     }
-
 
     public function check_tour_availability_for_edit($tgl_mulai, $tgl_selesai, $id_tour, $user_id)
 {

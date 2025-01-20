@@ -51,7 +51,7 @@
                                     </div>
                                 <?php endif; ?>
 
-                                <a href="<?php echo site_url('admin/pelanggan/export_csv'); ?>" class="btn btn-success mb-3">
+                                <a href="<?php echo site_url('admin/laporan/export_csv'); ?>" class="btn btn-success mb-3">
                                 <i class="bi bi-file-earmark-arrow-down"></i> Unduh Laporan (CSV)
                         </a>
 

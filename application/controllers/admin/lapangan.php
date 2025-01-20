@@ -203,13 +203,18 @@ public function update($id_lapangan) {
     $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
 
     if ($this->form_validation->run() == FALSE) {
+        if ($this->upload->display_errors() == 'The file you are attempting to upload is larger than the permitted size.') {
+            $this->session->set_flashdata('error', 'Ukuran file gambar tidak boleh lebih dari 2MB!');
+        } else {
+            $this->session->set_flashdata('error', 'Gagal mengunggah file gambar! ' . 'Ukuran file gambar tidak boleh lebih dari 2MB!');
+        }
         $this->edit_lapangan($id_lapangan);
         $this->session->set_flashdata('error', 'Semua data harus diisi!');
         redirect('admin/edit_lapangan/' . $id_lapangan);
     } else {
         $config['upload_path']   = './uploads/lapangan/';
         $config['allowed_types'] = 'jpg|jpeg|png';
-        $config['max_size']      = 2048; // 2MB
+        $config['max_size']      = 2048; 
         $this->load->library('upload', $config);
 
         $data = [
@@ -229,7 +234,7 @@ public function update($id_lapangan) {
                 $data['gambar'] = $file_data['file_name'];
             } else {
                 $this->session->set_flashdata('error', 'Gagal mengunggah gambar: ' . $this->upload->display_errors());
-                redirect('admin/edit_lapangan' . $id_lapangan);
+                redirect('admin/edit_lapangan/' . $id_lapangan);
             }
         }
         

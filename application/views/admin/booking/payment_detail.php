@@ -64,6 +64,19 @@
         <section id="booking-detail">
             <div class="card">
                 <div class="card-body">
+                     <!-- Flash Messages -->
+            <?php if ($this->session->flashdata('message')): ?>
+                <div class="alert alert-success">
+                    <?php echo $this->session->flashdata('message'); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($this->session->flashdata('error')): ?>
+                <div class="alert alert-danger">
+                    <?php echo $this->session->flashdata('error'); ?>
+                </div>
+            <?php endif; ?>
+            <!-- End Flash Messages -->
                     <form action="<?php echo site_url('admin/booking/proses_pembayaran'); ?>" method="POST">
                         <div class="row">
                             <input type="hidden" name="id_booking" value="<?php echo $booking['id_booking']; ?>">

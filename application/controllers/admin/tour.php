@@ -162,10 +162,10 @@ public function update($id_tour)
     $this->form_validation->set_rules('nama_tour', 'Nama Tour', 'required');
     $this->form_validation->set_rules('tanggal_mulai', 'Tanggal Mulai', 'required');
     $this->form_validation->set_rules('tanggal_selesai', 'Tanggal Selesai', 'required');
+    $this->form_validation->set_rules('deskripsi_tour', 'Deskripsi Tour', 'required');
 
     if ($this->form_validation->run() === FALSE) {
-        echo "error";
-        $this->edit($id_tour); 
+        $this->edit_tour($id_tour); 
     } else {
         $user_id = $this->session->userdata('user_id');
         $data = [
@@ -181,12 +181,12 @@ public function update($id_tour)
    
         if ($this->Tour_model->check_booking_conflict($tgl_mulai, $tgl_selesai, $user_id)) {
             $this->session->set_flashdata('error', 'Tanggal bermain konflik dengan data booking.');
-            redirect('admin/tour/edit/' . $id_tour);
+            redirect('admin/tour/edit_tour/' . $id_tour);
         }
 
         if ($this->Tour_model->check_tour_availability_for_edit($tgl_mulai, $tgl_selesai, $id_tour, $user_id)) {
             $this->session->set_flashdata('error', 'Jadwal tour konflik dengan jadwal tour lain.');
-            redirect('admin/tour/edit/' . $id_tour);
+            redirect('admin/tour/edit_tour/' . $id_tour);
         }
 
         if ($this->Tour_model->update_tour($id_tour, $user_id, $data)) {

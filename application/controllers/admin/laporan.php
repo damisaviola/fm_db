@@ -66,9 +66,9 @@ public function export_csv()
 
     $user_id = $this->session->userdata('user_id'); 
 
-    $this->load->model('Lapangan_model');
-    $data_lapangan = $this->Lapangan_model->get_all_lapangan($user_id);
-    $filename = 'data_lapangan_' . date('Ymd') . '.csv';
+    $this->load->model('Booking_model');
+    $data_lapangan = $this->Booking_model->get_pembayaran($user_id);
+    $filename = 'data_laporan_' . date('Ymd') . '.csv';
 
     header("Content-Type: text/csv");
     header("Content-Disposition: attachment; filename={$filename}");
@@ -78,16 +78,19 @@ public function export_csv()
     $file = fopen('php://output', 'w');
 
 
-    $header = ['User ID', 'ID Lapangan', 'Nama Lapangan', 'Harga', 'deskripsi'];
+    $header = ['User ID', 'ID Pembayaran', 'ID Pelanggan', 'TOtal Harga', 'Metode', 'Jumlah Bayar', 'Tanggal Transaksi'];
     fputcsv($file, $header);
 
     foreach ($data_lapangan as $row) {
         $csv_row = [
             'user_id' => $user_id, 
-            'id_lapangan' => $row['id_lapangan'],
-            'nama' => $row['nama'],
-            'harga' => $row['harga'],
-            'deskripsi' => $row['deskripsi']
+            'id_booking' => $row['id_booking'],
+            'id_pembayaran' => $row['id_pembayaran'],
+            'id_pelanggan' => $row['id_pelanggan'],
+            'total_harga' => $row['total_harga'],
+            'metode' => $row['metode'],
+            'jumlah_bayar' => $row['jumlah_bayar'],
+            'tanggal_transaksi' => $row['tanggal_transaksi'],
         ];
         fputcsv($file, $csv_row);
     }

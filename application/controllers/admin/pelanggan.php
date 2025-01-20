@@ -122,7 +122,10 @@ class Pelanggan extends CI_Controller {
     public function update($id)
     {
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('nomor_hp', 'Nomor HP', 'required');
+         $this->form_validation->set_rules('nomor_hp', 'Nomor HP', 'required|regex_match[/^[0-9]{10,15}$/]', [
+        'required' => 'Nomor telepon harus diisi.',
+        'regex_match' => 'Nomor telepon harus berupa angka 10-15 digit.'
+    ]);
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required');
     

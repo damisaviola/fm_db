@@ -65,15 +65,12 @@
 
                         <!-- Remember me -->
                         <div class="form-check form-check-lg d-flex align-items-end">
-                            <input class="form-check-input me-2" type="checkbox" name="remember_me" value="1" id="flexCheckDefault">
-                            <label class="form-check-label text-gray-600" for="flexCheckDefault">
-                                Tetap Login
-                            </label>
+
                         </div>
 
 
                         <!-- Submit Button -->
-                        <button type="submit" class="btn btn-success btn-block btn-lg shadow-lg mt-5">Masuk</button>
+                        <button type="submit" class="btn btn-success btn-block btn-lg shadow-lg">Masuk</button>
                     </form>
 
                     <!-- Links -->

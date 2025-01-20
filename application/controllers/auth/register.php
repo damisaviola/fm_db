@@ -20,7 +20,7 @@ class Register extends CI_Controller {
 
   
     public function register_user() {
-        // Aturan validasi
+        
     $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]', [
         'required' => 'Email harus diisi.',
         'valid_email' => 'Format email tidak valid.',

@@ -21,25 +21,17 @@ class User_model extends CI_Model {
     public function get_pembayaran($filters = []) {
         $this->db->select('*');
         $this->db->from('pembayaran');
-        
-        // Mengaplikasikan filter jika ada
         if (!empty($filters)) {
             $this->db->where($filters);
         }
-    
-        // Menambahkan urutan berdasarkan tanggal transaksi
         $this->db->order_by('tanggal_transaksi', 'DESC');
-        
-        // Menjalankan query dan mengembalikan hasil
         $query = $this->db->get();
         return $query->result_array();
     }
     
- 
     public function activate_account($activation_code) {
         $this->db->where('activation_code', $activation_code);
         $user = $this->db->get('users')->row();
-    
         if ($user) {
             $this->db->set('is_active', 1);
             $this->db->where('id', $user->id);
@@ -59,12 +51,9 @@ class User_model extends CI_Model {
                 return $user;
             }
         }
-    
         return FALSE;
     }
-    
     public function get_user_by_id($user_id) {
-       
         $this->db->where('id', $user_id);
         $query = $this->db->get('users'); 
         return $query->row();  

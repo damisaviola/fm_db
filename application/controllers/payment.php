@@ -9,13 +9,13 @@ class Payment extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->config('midtrans'); // Load Midtrans config
+        $this->load->config('midtrans'); 
         $this->load->library('session');
         $this->load->helper('url');
     }
 
     public function index() {
-        $plan_name = 'elite';  // Example plan
+        $plan_name = 'elite'; 
         $plan_details = $this->get_plan_details($plan_name);
 
         $price = (float) str_replace(['Rp', 'K', '.'], '', $plan_details['price']);

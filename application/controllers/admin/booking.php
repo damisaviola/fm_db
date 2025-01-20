@@ -347,6 +347,21 @@ public function process_payment() {
 public function proses_pembayaran() {
     $this->load->model('Booking_model');
 
+    // Validasi input dari form
+    $this->form_validation->set_rules('id_booking', 'ID Booking', 'required|integer');
+    $this->form_validation->set_rules('id_pelanggan', 'ID Pelanggan', 'required|integer');
+    $this->form_validation->set_rules('total_harga', 'Total Harga', 'required|numeric');
+    $this->form_validation->set_rules('metode', 'Metode Pembayaran', 'required|in_list[tunai,qris]');
+    $this->form_validation->set_rules('jumlah_bayar', 'Jumlah Bayar', 'required|numeric');
+
+    // Jika validasi gagal
+    if ($this->form_validation->run() === FALSE) {
+        $this->session->set_flashdata('error', validation_errors());
+        redirect('admin/booking/pay/' . $this->input->post('id_booking'));
+        return;
+    }
+
+    // Ambil data dari input
     $id_booking = $this->input->post('id_booking');
     $id_pelanggan = $this->input->post('id_pelanggan');
     $total_harga = str_replace(['Rp', '.', ','], '', $this->input->post('total_harga'));
@@ -354,6 +369,7 @@ public function proses_pembayaran() {
     $jumlah_bayar = $this->input->post('jumlah_bayar') ?: $total_harga;
     $kembalian = ($metode == 'tunai') ? $jumlah_bayar - $total_harga : 0;
 
+    // Data yang akan disimpan
     $data = [
         'id_booking'    => $id_booking,
         'id_pelanggan'  => $id_pelanggan,
@@ -364,8 +380,9 @@ public function proses_pembayaran() {
         'user_id'       => $this->session->userdata('user_id'),
     ];
 
+    // Insert pembayaran ke database
     if ($this->Booking_model->insert_pembayaran($data)) {
-     
+        // Update status booking
         $update_status = ['status' => 'Lunas'];
         $this->Booking_model->update_booking_status($id_booking, $update_status);
 
@@ -376,6 +393,7 @@ public function proses_pembayaran() {
 
     redirect('admin/booking');
 }
+
 
 
 

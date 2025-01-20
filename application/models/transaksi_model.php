@@ -10,12 +10,11 @@ class Transaksi_model extends CI_Model {
 
     public function get_transaksi_by_user($user_id)
 {
-    // Query untuk mengambil transaksi berdasarkan id_user yang login
     $this->db->select('*');
     $this->db->from('pembayaran');
-    $this->db->where('user_id', $user_id); // Filter berdasarkan user yang login
+    $this->db->where('user_id', $user_id); 
     $query = $this->db->get();
-    return $query->result_array(); // Mengembalikan hasil sebagai array
+    return $query->result_array(); 
 }
 
 public function getPembayaranById($id_pembayaran) {

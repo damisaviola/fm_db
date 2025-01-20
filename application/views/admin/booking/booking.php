@@ -32,7 +32,7 @@
                         </div>
                         <div class="card-body">
                         <a href="<?php echo site_url('admin/booking/export_csv'); ?>" class="btn btn-success mb-3">
-                                <i class="bi bi-file-earmark-arrow-down"></i> Unduh Data Pelanggan (CSV)
+                                <i class="bi bi-file-earmark-arrow-down"></i> Unduh Data Booking (CSV)
                         </a>
 
                         <?php if ($this->session->flashdata('message')): ?>

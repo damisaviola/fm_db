@@ -74,7 +74,7 @@
                                         <div class="form-group">
                                             <label for="nama_tour">Nama Tour:</label>
                                             <input type="text" id="nama_tour" class="form-control" name="nama_tour" 
-                                                   placeholder="Nama Tour" value="<?php echo set_value('nama_tour', $tour['nama_tour']); ?>" required>
+                                                   placeholder="Nama Tour" value="<?php echo set_value('nama_tour', $tour['nama_tour']); ?>">
                                         </div>
                                     </div>
 
@@ -82,7 +82,7 @@
                                         <div class="form-group">
                                             <label for="tanggal_mulai">Tanggal Mulai:</label>
                                             <input type="date" id="tanggal_mulai" class="form-control" name="tanggal_mulai" 
-                                            value="<?php echo set_value('tanggal_mulai', date('Y-m-d', strtotime($tour['tanggal_mulai']))); ?>" required>
+                                            value="<?php echo set_value('tanggal_mulai', date('Y-m-d', strtotime($tour['tanggal_mulai']))); ?>">
                                         </div>
                                     </div>
 
@@ -90,7 +90,7 @@
                                         <div class="form-group">
                                             <label for="tanggal_selesai">Tanggal Selesai:</label>
                                             <input type="date" id="tanggal_selesai" class="form-control" name="tanggal_selesai" 
-                                            value="<?php echo set_value('tanggal_selesai', date('Y-m-d', strtotime($tour['tanggal_selesai']))); ?>" required>
+                                            value="<?php echo set_value('tanggal_selesai', date('Y-m-d', strtotime($tour['tanggal_selesai']))); ?>">
                                         </div>
                                     </div>
 
@@ -98,7 +98,7 @@
                                         <div class="form-group">
                                             <label for="deskripsi_tour">Deskripsi:</label>
                                             <textarea id="deskripsi_tour" class="form-control" name="deskripsi_tour" 
-                                                      placeholder="Deskripsi Tour" rows="4" required><?php echo set_value('deskripsi_tour', $tour['deskripsi_tour']); ?></textarea>
+                                                      placeholder="Deskripsi Tour" rows="4"><?php echo set_value('deskripsi_tour', $tour['deskripsi_tour']); ?></textarea>
                                         </div>
                                     </div>
 
