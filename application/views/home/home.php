@@ -170,20 +170,7 @@
         
                             <div class="swiper-wrapper">
     
-                                <div class="s-testimonials__slide swiper-slide">
-                                    <div class="s-testimonials__author">
-                                        <img src="images/avatars/user-02.jpg" alt="Author image" class="s-testimonials__avatar">
-                                        <cite class="s-testimonials__cite">
-                                            <strong>Tim Cook</strong>
-                                            <span>CEO, Apple</span>
-                                        </cite>
-                                    </div>
-                                    <p>
-                                    Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                    Laudantium quia consequatur molestias.
-                                    </p>
-                                </div> <!-- end s-testimonials__slide -->
+                             
                 
                                 <div class="s-testimonials__slide swiper-slide">
                                     <div class="s-testimonials__author">
