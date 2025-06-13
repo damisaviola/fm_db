@@ -3,6 +3,8 @@
 
   <head>
 
+  
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -29,6 +31,21 @@ https://templatemo.com/tm-591-villa-agency
   </head>
 
 <body>
+
+<style>
+  .main-banner .item-1 {
+    background-image: url('<?= base_url('assets/frontend/assets/images/lap1.jpg') ?>');
+  }
+
+  .main-banner .item-2 {
+    background-image: url('<?= base_url('assets/frontend/assets/images/lap1.jpg') ?>');
+  }
+
+  .main-banner .item-3 {
+    background-image: url('<?= base_url('assets/frontend/assets/images/lap1.jpg') ?>');
+  }
+</style>
+
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">

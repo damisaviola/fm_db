@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pelanggan extends CI_Controller {
+class Member extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -36,10 +36,10 @@ class Pelanggan extends CI_Controller {
             redirect('login');
         }
     
-        $this->load->view('admin/pelanggan/header');
-        $this->load->view('admin/pelanggan/pelanggan', $data);
-        $this->load->view('admin/dashboard/menu');
-        $this->load->view('admin/pelanggan/footer');
+        $this->load->view('admin/member/header');
+         $this->load->view('admin/dashboard/menu');
+        $this->load->view('admin/member/daftar_member', $data);
+        $this->load->view('admin/member/footer');
     }
 
 

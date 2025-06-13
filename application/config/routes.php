@@ -90,7 +90,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['admin/edit_tour/(:num)'] = 'admin/tour/edit_tour/$1';
 
 
-
+// Membership 
+$route['admin/daftar_member'] = 'admin/member';
 // pembayaran 
 $route['admin/booking/pay/(:num)'] = 'admin/booking/pay/$1';
 

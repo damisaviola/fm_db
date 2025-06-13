@@ -55,6 +55,24 @@
                     </ul>
                 </li>
 
+                                <!-- Membership -->
+                    <li class="sidebar-item has-sub <?php echo (uri_string() == 'admin/daftar_member' || uri_string() == 'admin/input_lapangan' || strpos(uri_string(), 'admin/edit_lapangan/') === 0) ? 'active' : ''; ?>">
+
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-person-badge-fill"></i>
+                            <span>Membership</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item <?php echo (uri_string() == 'admin/daftar_member') ? 'active' : ''; ?>">
+                                <a href="<?php echo site_url('admin/daftar_member'); ?>">Daftar Member</a>
+                            </li>
+                            <li class="submenu-item <?php echo (uri_string() == 'admin/input_lapangan') ? 'active' : ''; ?>">
+                                <a href="<?php echo site_url('admin/input_lapangan'); ?>">Input Member</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
                 <!-- Booking -->
                 <li class="sidebar-item has-sub <?php echo ( uri_string() === 'admin/booking' || strpos(uri_string(), 'admin/booking/pay/') === 0 || uri_string() === 'admin/input_booking' || strpos(uri_string(), 'admin/edit_halaman/') === 0) ? 'active' : ''; ?>">
 

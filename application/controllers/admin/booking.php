@@ -30,15 +30,6 @@ class Booking extends CI_Controller
                     redirect('login');
                 }
     
-    
-                $subscription = $this->Subscription_model->get_active_subscription($user_id);
-    
-                if (!$subscription) {
-                
-                    $this->session->set_flashdata('error', 'Anda belum melakukan subscribe.');
-                    redirect('home');
-                }
-    
     }
 
     public function index() {

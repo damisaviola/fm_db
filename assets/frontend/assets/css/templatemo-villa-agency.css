@@ -745,15 +745,15 @@ Banner Style
 }
 
 .main-banner .item-1 {
-  background-image: url(../images/banner-01.jpg);
+  background-image: url('<?= base_url('assets/frontend/assets/images/lap1.jpg') ?>');
 }
 
 .main-banner .item-2 {
-  background-image: url(../images/banner-02.jpg);
+  background-image: url(../images/lap1.jpg);
 }
 
 .main-banner .item-3 {
-  background-image: url(../images/banner-03.jpg);
+  background-image: url(../images/lap1.jpg);
 }
 
 .main-banner .item span.category {
@@ -1164,7 +1164,7 @@ Properties Style
 }
 
 .properties .item span.category {
-  background-color: #fbd9cf;
+  background-color: #d4fbcf;
   font-weight: 500;
   border-radius: 5px;
   font-size: 14px;

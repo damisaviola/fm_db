@@ -23,15 +23,6 @@ class Lapangan extends CI_Controller {
                     $this->session->set_flashdata('error', 'Akun Anda belum aktif.');
                     redirect('login');
                 }
-    
-    
-                $subscription = $this->Subscription_model->get_active_subscription($user_id);
-    
-                if (!$subscription) {
-                
-                    $this->session->set_flashdata('error', 'Anda belum melakukan subscribe.');
-                    redirect('home');
-                }
     }
 
     
