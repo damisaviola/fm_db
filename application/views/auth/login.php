@@ -78,6 +78,7 @@
                         <p class="text-gray-600">Belum mempunyai akun? <a class="font-bold" href="<?php echo site_url('register'); ?>">Daftar</a>.</p>
                         <p><a class="font-bold" href="<?php echo site_url('lupa-password'); ?>">Lupa Password</a>.</p>
                     </div>
+                    
                 </div>
             </div>
 
