@@ -8,7 +8,7 @@
             </header>
 
             <div class="page-heading">
-                <h3>Profile Statistics</h3>
+                <h3>Dashboard Member</h3>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -24,7 +24,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-    <h6 class="text-muted font-semibold">Total Lapangan</h6>
+    <h6 class="text-muted font-semibold">Total Jam Main</h6>
     <h6 class="font-extrabold mb-0"><?php echo number_format($total_lapangan, 0, ',', '.'); ?></h6>
 </div>
 
@@ -42,7 +42,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-    <h6 class="text-muted font-semibold">Pelanggan</h6>
+    <h6 class="text-muted font-semibold">Frekuensi</h6>
     <h6 class="font-extrabold mb-0"><?php echo number_format($total_customers, 0, ',', '.'); ?></h6>
 </div>
 

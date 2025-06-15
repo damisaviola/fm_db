@@ -15,8 +15,8 @@
                 <li class="sidebar-title">Menu</li>
 
                 <!-- Dashboard -->
-                <li class="sidebar-item <?php echo (uri_string() == 'admin') ? 'active' : ''; ?>">
-                    <a href="<?php echo site_url('admin'); ?>" class="sidebar-link">
+                <li class="sidebar-item <?php echo (uri_string() == 'member') ? 'active' : ''; ?>">
+                    <a href="<?php echo site_url('member'); ?>" class="sidebar-link">
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
