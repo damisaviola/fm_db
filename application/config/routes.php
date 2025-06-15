@@ -92,10 +92,10 @@ $route['admin/edit_tour/(:num)'] = 'admin/tour/edit_tour/$1';
 
 // Membership 
 $route['admin/daftar_member'] = 'admin/member';
-
+$route['member/login'] = 'member/auth/login';
 $route['member'] = 'member/member';
+$route['member/register'] = 'member/auth/register';
+
 // pembayaran 
 $route['admin/booking/pay/(:num)'] = 'admin/booking/pay/$1';
 
-
-$route['member/login'] = 'member/auth/login';
